@@ -1,30 +1,42 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Chiron is a productivity app meant to visualize your progress across
+a variety of tasks. Track you're progress with the experience you gain, level
+up your avatar while you level up IRL.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+# Vite
+> npm create vite@latest my-app-name -- --template react-ts
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# TailWind CSS set up step-by-step:
+CLI:
+> npm create vite@latest my-project -- --template react
+> cd my-project
 
-- Configure the top-level `parserOptions` property like this:
+> npm install -D tailwindcss postcss autoprefixer
+> npx tailwindcss init -p
 
+tailwind.config.js file:
 ```js
+/** @type {import('tailwindcss').Config} */
 export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
   },
+  plugins: [],
 }
 ```
+./src/index.css file:
+```js
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+CLI:
+> npm run dev
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
