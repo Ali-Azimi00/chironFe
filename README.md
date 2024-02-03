@@ -6,10 +6,10 @@ up your avatar while you level up IRL.
 
 
 
-# Vite
+## Vite
 > npm create vite@latest my-app-name -- --template react-ts
 
-# TailWind CSS set up step-by-step:
+## TailWind CSS set up step-by-step:
 CLI:
 > npm create vite@latest my-project -- --template react
 > cd my-project
@@ -39,4 +39,9 @@ export default {
 ```
 CLI:
 > npm run dev
+
+
+## Other Libraries
+> npm install @headlessui/react
+> npm install @heroicons/react
 
