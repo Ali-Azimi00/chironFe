@@ -11,15 +11,15 @@ function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 
-const navigation =[
-    { crumb: 0, name: 'Home', href: '', current: false },
-    { crumb: 1, name: 'Task', href: '', current: false },
-    { crumb: 2, name: 'Exp', href: '', current: false },
- 
+const navigation = [
+    { crumb: 0, name: 'Home', href: '/', current: false },
+    { crumb: 1, name: 'Task', href: 'SelectTasks', current: false },
+    { crumb: 2, name: 'Exp', href: 'Exp', current: false },
+
 ]
 
 function NavBar() {
- 
+
 
 
     return (
@@ -64,7 +64,7 @@ function NavBar() {
                                                         item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                                                         'rounded-md px-3 py-2 text-sm font-medium'
                                                     )}
-                                                    // aria-current={item.current ? 'page' : undefined}
+                                                // aria-current={item.current ? 'page' : undefined}
                                                 >
                                                     {item.name}
                                                 </a>

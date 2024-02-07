@@ -9,6 +9,9 @@ up your avatar while you level up IRL.
 ## Vite
 > npm create vite@latest my-app-name -- --template react-ts
 
+## Routing
+> npm i react-router-dom
+
 ## TailWind CSS set up step-by-step:
 CLI:
 > npm create vite@latest my-project -- --template react

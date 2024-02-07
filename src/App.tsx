@@ -2,8 +2,11 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
-import Hero from './components/Hero'
+import Hero from './pages/Hero'
+import TaskSelect from './pages/TaskSelect'
 import NavBar from './components/NavBar'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Experience from './pages/Experience';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -11,15 +14,20 @@ function App() {
   return (
     <div className="">
 
-        <NavBar></NavBar>
+      <NavBar></NavBar>
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Hero />}></Route>
+
+          <Route path="/SelectTasks" element={<TaskSelect />}></Route>
+          <Route path="/Exp" element={<Experience />}></Route>
+
+        </Routes>
+      </BrowserRouter>
 
 
-      <div className='App'>
-        <div className='mt-2'>
-        <Hero></Hero>
 
-        </div>
-      </div>
 
     </div>
 
