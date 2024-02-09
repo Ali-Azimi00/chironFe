@@ -1,32 +1,37 @@
 import React from 'react';
-import Card from '../components/Card';
-import { tasks } from "../constants";
+import HeroCards from '../components/HeroCards';
+import HeroBanner from '../components/HeroBanner';
+
 
 
 function Hero() {
 
     return (
         <React.Fragment>
-            <div className='App'>
-                <div className='mt-2'></div>
-                <div className='w-full '>
-                    <div className='grid flex items-center justify-center
-                  sm:grid-cols-3
-                  md:grid-cols-4
-                  lg:grid-cols-5
-                  xl:grid-cols-6
-                  gap-8'>
-                        <Card taskName={tasks[0].name} icon={tasks[0].icon}></Card>
-                        <Card taskName={tasks[1].name} icon={tasks[1].icon}></Card>
-                        <Card taskName={tasks[2].name} icon={tasks[2].icon}></Card>
-                        <Card taskName={tasks[0].name} icon={tasks[0].icon}></Card>
-                        <Card taskName={tasks[1].name} icon={tasks[1].icon}></Card>
-                        <Card taskName={tasks[2].name} icon={tasks[2].icon}></Card>
-                        <Card taskName={tasks[0].name} icon={tasks[0].icon}></Card>
-                        <Card taskName={tasks[1].name} icon={tasks[1].icon}></Card>
-                        <Card taskName={tasks[2].name} icon={tasks[2].icon}></Card>
+            <div className='mt-0'>
+
+                <div className='ccLg'>
+                    <div>
+                        <HeroBanner></HeroBanner>
+
+                    </div>
+
+                </div>
+
+                <div className='cardContainer'
+                // className='flex justify-center items-center'
+                // style={{margin:'0 auto'}}
+                >
+                    <div>
+                        <HeroCards></HeroCards>
+
                     </div>
                 </div>
+
+
+
+
+
             </div>
 
         </React.Fragment >

@@ -6,7 +6,11 @@ export default {
   theme: {
     extend: {
       screens: { 'xsm': { 'max': '640px' } },
+      margin: {
+        '5p': '5%',
+      }
     },
+    
   },
   plugins: [],
 }
