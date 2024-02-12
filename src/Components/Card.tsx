@@ -30,21 +30,21 @@ function Card(props: any) {
                 style={{ backdropFilter: "blur(10px)" }}
             >
                 <div className='py-2 px-220 border-none rounded-3xl 
-                                xsm:px-24
+                                xsm:px-16
                                 shadow-card'
                 >
-                    <h2 className='font-bold mt-4 '>
+                    <h2 className='font-bold mt-4 xsm:mt-0 '>
                         {props.taskName}
                     </h2>
 
-                    <div className='m-12 xsm:m-8 flex items-center justify-center  icon-color2 icon-color'>
+                    <div className='m-12 xsm:m-2 flex items-center justify-center  icon-color2 icon-color'>
                         <img className={hoverStat}  alt="tempImage" src={props.icon}></img>
                     </div>
                     <p className=''>
                         description
                     </p>
 
-                    <div className='p-0 mb-8'>
+                    <div className='p-0 mb-8 xsm:mb-2'>
                         <div>
                         </div>
                     </div>

@@ -41,7 +41,7 @@ function HeroBanner() {
             <div className='-mb-48 '>
                 <div className='fade-img '>
                     <div className='statBox pt-8'>
-                        <div className='border p-4  w-1/2  xsm:w-3/4   rounded-2xl shadow-2xl flex'>
+                        <div className='border p-4  w-1/2  xsm:w-full   rounded-2xl shadow-2xl flex'>
 
                             <div>
                                 {loadStatTitle()}
