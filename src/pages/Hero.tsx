@@ -10,28 +10,17 @@ function Hero() {
         <React.Fragment>
             <div className='mt-0'>
 
-                <div className='ccLg'>
+                <div className=''>
                     <div>
                         <HeroBanner></HeroBanner>
-
                     </div>
-
                 </div>
 
-                <div className='cardContainer'
-                // className='flex justify-center items-center'
-                // style={{margin:'0 auto'}}
-                >
+                <div className='cardContainer'>
                     <div>
                         <HeroCards></HeroCards>
-
                     </div>
                 </div>
-
-
-
-
-
             </div>
 
         </React.Fragment >

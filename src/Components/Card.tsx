@@ -25,18 +25,17 @@ function Card(props: any) {
                 setAniTog(!aniTog);
             }}
                 className='hover:animate-pulse ease-linear transform 
-            hover:scale-110 transition duration-500 inline 
-            xl:min-w-full'
+                            hover:scale-110 transition duration-500 inline 
+                            xl:min-w-full'
+                style={{ backdropFilter: "blur(10px)" }}
             >
-                <div className='py-2 px-220 border-none rounded-3xl xsm:px-24
-                            shadow-card'
-                    style={{backdropFilter:"blur(10px)"}}
+                <div className='py-2 px-220 border-none rounded-3xl 
+                                xsm:px-24
+                                shadow-card'
                 >
                     <h2 className='font-bold mt-4 '>
                         {props.taskName}
                     </h2>
-
-
 
                     <div className='m-12 xsm:m-8 flex items-center justify-center'>
                         <img className={hoverStat} style={{ filter: "invert(.7)" }} alt="tempImage" src={props.icon}></img>
@@ -50,8 +49,6 @@ function Card(props: any) {
                         <div>
                         </div>
                     </div>
-
-
 
                 </div>
             </div>

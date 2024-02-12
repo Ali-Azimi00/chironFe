@@ -11,25 +11,18 @@ function App() {
   return (
     <div className="">
 
-
       <NavBar></NavBar>
       {/* <div className='flex justify-center items-center mx-12'> */}
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Hero />}></Route>
+      <BrowserRouter>
+        <Routes>
 
-            <Route path="/SelectTasks" element={<TaskSelect />}></Route>
-            <Route path="/Exp" element={<Experience />}></Route>
+          <Route path="/" element={<Hero />}></Route>
+          <Route path="/SelectTasks" element={<TaskSelect />}></Route>
+          <Route path="/Exp" element={<Experience />}></Route>
 
-          </Routes>
-        </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
       {/* </div> */}
-
-
-
-
-
-
 
     </div>
 

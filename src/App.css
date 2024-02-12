@@ -8,12 +8,36 @@
 
 .banner {
   max-width: 1280px;
-
   margin: 0 0;
   text-align: center;
-
 }
 
+.fade-img {
+  height: 25rem;
+  width: 100%;
+  background-color: rgb(36, 36, 36); /* Used if the image is unavailable */
+
+  background-image: linear-gradient(transparent, rgb(36, 36, 36) 90%), url(https://t3.ftcdn.net/jpg/02/68/48/86/240_F_268488616_wcoB2JnGbOD2u3bpn2GPmu0KJQ4Ah66T.jpg);
+  background-position: center; /* Center the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+
+  image-rendering:optimizeQuality;
+}
+
+.statBox{
+  max-width: 1280px;
+  padding: 0 2rem;
+  margin:  auto;
+
+  /* text-align: left; */
+}
+
+.statBar{
+  /* background-position: center; 
+  background-size: cover;  */
+  color: red;
+  ;
+}
 .cardContainer {
   max-width: 1280px;
   padding: 0 2rem;
