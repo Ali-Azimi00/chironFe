@@ -7,7 +7,18 @@
  import tea from './tea.png';
  import run from './treadmill.png';
  import yyMind from './yin-yang.png';
- import yoga from './yoga-pose.png';
+ import yoga from './yoga-pose-w.png';
+ import lotus from './lotus.png';
+ import cycling from './cycling.png';
+ import walk from './walk.png';
+ import travel from './trip.png';
+ import network from './network.png';
+ import album from './album.png';
+import music from './music.png';
+import climbing from './rock-climbing.png';
+import hiking from './hiking.png';
+import sunset from './sunset.png';
+
 
 
 ;
@@ -21,5 +32,17 @@
     tea,
     run,
     yoga,
-    yyMind
+    yyMind,
+    
+    lotus,
+    cycling,
+    walk,
+    travel,
+    network,
+    album,
+    music,
+    climbing,
+    hiking,
+    sunset
+
  }

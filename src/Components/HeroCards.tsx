@@ -24,9 +24,7 @@ function HeroCards() {
                     xl:grid-cols-6
                     gap-6'>
                     {loadCards()}
-                    {loadCards()}
-                    {loadCards()}
-                    {loadCards()}
+                  
                 </div>
             </div>
 

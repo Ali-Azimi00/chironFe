@@ -37,10 +37,9 @@ function Card(props: any) {
                         {props.taskName}
                     </h2>
 
-                    <div className='m-12 xsm:m-8 flex items-center justify-center'>
-                        <img className={hoverStat} style={{ filter: "invert(.7)" }} alt="tempImage" src={props.icon}></img>
+                    <div className='m-12 xsm:m-8 flex items-center justify-center  icon-color2 icon-color'>
+                        <img className={hoverStat}  alt="tempImage" src={props.icon}></img>
                     </div>
-
                     <p className=''>
                         description
                     </p>

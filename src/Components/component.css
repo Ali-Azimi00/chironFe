@@ -1,3 +1,19 @@
 .shadow-card {
     box-shadow: inset  0px 1px 20px 0 rgba(255, 255, 255, 0.3);
 }
+
+.icon-color{
+    /* filter: sepia(100%);
+    -webkit-filter: sepia(100%); */
+
+    /* filter: invert(.8);
+    -webkit-filter:invert(.8) ; */
+    
+    /* -webkit-filter:hue-rotate(100deg); */
+    /* filter:hue-rotate(300deg); */
+
+}
+
+.icon-color2{
+    filter:contrast(.8);
+}
