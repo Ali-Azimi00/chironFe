@@ -12,13 +12,22 @@ import {
     lotus,
     cycling,
     walk,
-    travel,
+    daytrip,
     network,
     album,
     music,
     climbing,
     hiking,
-    sunset
+    sunset,
+    chess,
+    beagle,
+    cat,
+    chat,
+    coding,
+    pawprint,
+    spanish,
+    suitcase,
+    travel
 
 
 } from '../assets/icons'
@@ -80,8 +89,8 @@ const tasks = [
         icon: walk
     },
     {
-        name: "travel",
-        icon: travel
+        name: "daytrip",
+        icon: daytrip
     },
     {
         name: "network",
@@ -106,6 +115,42 @@ const tasks = [
     {
         name: "sunset",
         icon: sunset
+    },
+    {
+        name: "chess",
+        icon: chess
+    },
+    {
+        name: "dog",
+        icon: beagle
+    },
+    {
+        name: "cat",
+        icon: cat
+    },
+    {
+        name: "coding",
+        icon: coding
+    },
+    {
+        name: "spanish",
+        icon: spanish
+    },
+    {
+        name: "animals",
+        icon: pawprint
+    },
+    {
+        name: "suitcase",
+        icon: suitcase
+    },
+    {
+        name: "travel",
+        icon: travel
+    },
+    {
+        name: "chat",
+        icon: chat
     },
 ]
 

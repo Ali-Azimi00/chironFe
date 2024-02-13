@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../App.css'
 
 
@@ -8,7 +8,7 @@ function HeroBanner() {
         { title: "Strength", percent: 65, color: 'purple' },
         { title: "Endurance", percent: 45, color: 'red' },
         { title: "Intelligence", percent: 15, color: 'green' },
-        { title: "Spirit", percent: 85, color:'blue' },
+        { title: "Spirit", percent: 85, color: 'blue' },
 
     ]);
 
@@ -16,7 +16,7 @@ function HeroBanner() {
     const loadStatTitle = () => {
         return (
             stats.map((stat) => (
-                <div>
+                <div key={stat.title}>
                     {stat.title}
                 </div>
             ))
@@ -27,13 +27,17 @@ function HeroBanner() {
     const loadStatBar = () => {
         return (
             stats.map((stat) => (
-                <div className='w-full bg-gray-200 rounded-full h-3 dark:bg-gray-700 mb-3'>
-                    <div className= {`bg-${stat.color}-600 h-3 rounded-full` }style={{ width: stat.percent.toString() + "%" }}></div>
+                <div key={stat.color} className='w-full bg-gray-200 rounded-full h-3 dark:bg-gray-700 mb-3'>
+                    <div className={`bg-${stat.color}-600 h-3 rounded-full`} style={{ width: stat.percent.toString() + "%" }}></div>
                 </div>
             ))
 
         )
     }
+
+    useEffect(() => {
+        loadStatBar();
+    }, [stats])
 
     return (
         <React.Fragment>
@@ -51,7 +55,9 @@ function HeroBanner() {
                                 {loadStatBar()}
                             </div>
 
+
                         </div>
+
                     </div>
                 </div>
             </div>

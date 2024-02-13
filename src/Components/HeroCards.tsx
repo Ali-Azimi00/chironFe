@@ -8,7 +8,7 @@ function HeroCards() {
     function loadCards() {
         return (
             tasks.map((task) => (
-                <Card taskName={task.name} icon={task.icon}></Card>
+                <Card key={task.icon} taskName={task.name} icon={task.icon}></Card>
             ))
         )
     }
@@ -22,8 +22,10 @@ function HeroCards() {
                     sm:grid-cols-3
                     md:grid-cols-4
                     lg:grid-cols-5
-                    xl:grid-cols-6
-                    gap-6'>
+                    xl:grid-cols-5
+                    gap-6'                    
+                    >
+                        
                     {loadCards()}
                   
                 </div>
