@@ -36,53 +36,65 @@ import {
 const tasks = [
     {
         name: "pullup",
-        icon: pullup
+        icon: pullup,
+        category:"physical"
     },
     {
         name: "pushup",
-        icon: muscle
+        icon: muscle,
+        category:"physical"
     },
     {
         name: "run",
-        icon: run
+        icon: run,
+        category:"physical"
     },
     {
         name: "water",
-        icon: flask
+        icon: flask,
+        category:"spirit"
     },
     {
         name: "coffee",
-        icon: coffee
+        icon: coffee,
+        category:"spirit"
     },
     {
         name: "tea",
-        icon: tea
+        icon: tea,
+        category:"spirit"
     },
     {
         name: "book",
-        icon: book
+        icon: book,
+        category:"mind"
     },
     {
         name: "meditate",
-        icon: meditate
+        icon: meditate,
+        category:"spirit"
     },
     {
         name: "yoga",
-        icon: yoga
+        icon: yoga,
+        category:"physical"
     },
     {
         name: "games",
-        icon: yyMind
+        icon: yyMind,
+        category:"spirit"
     },
 
 
     {
         name: "lotus",
-        icon: lotus
+        icon: lotus,
+        category: null
     },
     {
         name: "cycling",
-        icon: cycling
+        icon: cycling,
+        category:"spirit"
     },
     {
         name: "walk",
@@ -90,67 +102,84 @@ const tasks = [
     },
     {
         name: "daytrip",
-        icon: daytrip
+        icon: daytrip,
+        category:"spirit"
+
     },
     {
         name: "network",
-        icon: network
+        icon: network,
+        category:"spirit"
     },
     {
         name: "album",
-        icon: album
+        icon: album,
+        category:"spirit"
     },
     {
         name: "music",
-        icon: music
+        icon: music,
+        category: "spirit"
     },
     {
         name: "climbing",
-        icon: climbing
+        icon: climbing,
+        category:"physical"
     },
     {
         name: "hiking",
-        icon: hiking
+        icon: hiking,
+        category:"physical"
     },
     {
         name: "sunset",
-        icon: sunset
+        icon: sunset,
+        category:"spirit"
     },
     {
         name: "chess",
-        icon: chess
+        icon: chess,
+        category: "mind"
     },
     {
         name: "dog",
-        icon: beagle
+        icon: beagle,
+        category:"spirit"
     },
     {
         name: "cat",
-        icon: cat
+        icon: cat,
+        category:"spirit"
     },
     {
         name: "coding",
-        icon: coding
+        icon: coding,
+        category: "mind"
     },
     {
         name: "spanish",
-        icon: spanish
+        icon: spanish,
+        category: "mind"
     },
     {
         name: "animals",
-        icon: pawprint
+        icon: pawprint,
+        category: null
     },
     {
         name: "suitcase",
-        icon: suitcase
+        icon: suitcase,
+        category:"spirit"
     },
     {
         name: "travel",
-        icon: travel
+        icon: travel,
+        category:"spirit"
     },
     {
         name: "chat",
-        icon: chat
+        icon: chat,
+        category: "mind"
     },
 ]
 
