@@ -8,7 +8,6 @@ import logo from './../assets/AAwhite-trans.png'
 
 
 function classNames(...classes: string[]) {
-    console.log(classes.filter(Boolean).join(' '))
     return classes.filter(Boolean).join(' ')
 }
 

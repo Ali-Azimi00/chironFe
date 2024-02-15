@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from '../components/Card';
 import { tasks } from "../constants";
 
 
 function HeroCards() {
 
-    function loadCards() {
+    const [catState] = useState('run')
+
+    useEffect(() => {
+        loadCards();
+    })
+
+
+    const loadCards = () => {
+        
         return (
-            tasks.map((task) => (
+            tasks.filter((task) => task.category === 'mind').map((task) => (
                 <Card key={task.icon} taskName={task.name} icon={task.icon}></Card>
             ))
+            
         )
     }
 
@@ -23,11 +32,11 @@ function HeroCards() {
                     md:grid-cols-4
                     lg:grid-cols-5
                     xl:grid-cols-5
-                    gap-6'                    
-                    >
-                        
+                    gap-6'
+                >
+
                     {loadCards()}
-                  
+
                 </div>
             </div>
 
