@@ -4,7 +4,7 @@ import '../App.css'
 
 function HeroBanner() {
 
-    const [stats, setStats] = useState([
+    const [stats] = useState([
         { title: "Strength", percent: 65, color: 'purple' },
         { title: "Endurance", percent: 45, color: 'red' },
         { title: "Intelligence", percent: 15, color: 'green' },
@@ -23,15 +23,15 @@ function HeroBanner() {
         )
     }
 
-    function changeStat() {
+    // function changeStat() {
 
-        setStats((prevState) => {
-            let pd = { ...prevState };
-            pd[2].percent++
-            return pd
-        })
+    //     setStats((prevState) => {
+    //         let pd = { ...prevState };
+    //         pd[2].percent++
+    //         return pd
+    //     })
 
-    }
+    // }
 
 
     function loadStatBar() {
@@ -71,7 +71,6 @@ function HeroBanner() {
                             </div>
 
                         </div>
-                        <button onClick={() => { changeStat() }} ></button>
 
                     </div>
                 </div>

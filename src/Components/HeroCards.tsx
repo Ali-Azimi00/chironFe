@@ -5,26 +5,42 @@ import { tasks } from "../constants";
 
 function HeroCards() {
 
-    const [catState] = useState('run')
+    const [catState, setCatState] = useState('mind')
+    const [showCats, setShowCats] = useState(true)
 
     useEffect(() => {
-        loadCards();
-    })
+        loadStatCards();
+        loadCatCards();
+    }, [showCats])
 
 
-    const loadCards = () => {
-        
+    const loadStatCards = () => {
         return (
-            tasks.filter((task) => task.category === 'mind').map((task) => (
-                <Card key={task.icon} taskName={task.name} icon={task.icon}></Card>
+            tasks.filter((task) => task.category === catState).map((task) => (
+                <Card fade={false} key={task.icon} taskName={task.name} icon={task.icon}></Card>
             ))
-            
         )
+    }
+
+    const loadCatCards = () => {
+        return (
+            tasks.filter((task) => task.category === 'category').map((task) => (
+                <div className='delay-100' key={task.icon} onClick={() => { categoryFork(task) }} >
+                    <Card fade={true} taskName={task.name} icon={task.icon}></Card>
+                </div>
+            ))
+        )
+    }
+
+    const categoryFork = (task: any) => {
+        setTimeout(()=>{setShowCats(false);}, 2800)
+        setCatState(task.name)
     }
 
     return (
         <React.Fragment>
             <div className=''>
+                <button onClick={() => { setShowCats(true) }}> physical </button>
                 <div className=' 
                     grid 
                     xsm:grid-cols-2
@@ -35,9 +51,19 @@ function HeroCards() {
                     gap-6'
                 >
 
-                    {loadCards()}
+                    {showCats ? null : loadStatCards()}
 
                 </div>
+
+                <div className=' 
+                    grid 
+                    grid-cols-3
+                    gap-6'
+                >
+                    {showCats ? loadCatCards() : null}
+
+                </div>
+
             </div>
 
         </React.Fragment>

@@ -40,9 +40,9 @@ const tasks = [
         category:"physical"
     },
     {
-        name: "pushup",
+        name: "physical",
         icon: muscle,
-        category:"physical"
+        category:"category"
     },
     {
         name: "run",
@@ -80,16 +80,16 @@ const tasks = [
         category:"physical"
     },
     {
-        name: "games",
+        name: "mind",
         icon: yyMind,
-        category:"spirit"
+        category:"category"
     },
 
 
     {
-        name: "lotus",
+        name: "spirit",
         icon: lotus,
-        category: null
+        category: 'category'
     },
     {
         name: "cycling",
