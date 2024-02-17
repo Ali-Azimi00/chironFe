@@ -25,7 +25,7 @@ function HeroCards() {
     const loadCatCards = () => {
         return (
             tasks.filter((task) => task.category === 'category').map((task) => (
-                <div className='delay-100' key={task.icon} onClick={() => { categoryFork(task) }} >
+                <div className='delay-100 lg:px-6' key={task.icon} onClick={() => { categoryFork(task) }} >
                     <Card fade={true} taskName={task.name} icon={task.icon}></Card>
                 </div>
             ))
@@ -33,14 +33,13 @@ function HeroCards() {
     }
 
     const categoryFork = (task: any) => {
-        setTimeout(()=>{setShowCats(false);}, 2800)
+        setTimeout(()=>{setShowCats(false)}, 2800)
         setCatState(task.name)
     }
 
     return (
         <React.Fragment>
             <div className=''>
-                <button onClick={() => { setShowCats(true) }}> physical </button>
                 <div className=' 
                     grid 
                     xsm:grid-cols-2
@@ -58,6 +57,7 @@ function HeroCards() {
                 <div className=' 
                     grid 
                     grid-cols-3
+                    xsm:grid-cols-2
                     gap-6'
                 >
                     {showCats ? loadCatCards() : null}

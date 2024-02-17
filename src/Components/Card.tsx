@@ -27,10 +27,10 @@ function Card(props: any) {
             <div onClick={() => {
                 setAniTog(!aniTog);
             }}
-                className={' transition ease-linear transform  hover:animate-pulse '+
+                className={'transition ease-linear transform  hover:animate-pulse '+
                             'hover:scale-110 duration-500 inline '+
-                            'xl:min-w-full'}
-                style={{ backdropFilter: "blur(10px)" }}
+                            'xl:min-w-full '}
+                style={{ backdropFilter: "blur(10px)"}}
             >
                 <div className='py-2 px-220 border-none rounded-3xl 
                                 xsm:px-16
