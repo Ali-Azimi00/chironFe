@@ -9,9 +9,7 @@ function Card(props: any) {
 
     useEffect(() => {
         if (aniTog == true) {
-            setHoverStat(" ease-linear animate-bounce")
-
-            if(props.fade){}
+            setHoverStat(" ease-linear animate-bounce")          
         }
         else {
             setHoverStat("")
@@ -19,28 +17,24 @@ function Card(props: any) {
 
     }, [aniTog])
 
-
-//TODO CREATE CUSTOM FADE OUT CSS
-
+ 
     return (
         <React.Fragment>
-            <div onClick={() => {
-                setAniTog(!aniTog);
-            }}
+            <div onClick={() => {setAniTog(!aniTog)}}
                 className={'transition ease-linear transform  hover:animate-pulse '+
                             'hover:scale-110 duration-500 inline '+
-                            'xl:min-w-full '}
+                            'xl:min-w-full'}
                 style={{ backdropFilter: "blur(10px)"}}
             >
                 <div className='py-2 px-220 border-none rounded-3xl 
                                 xsm:px-16
-                                shadow-card'
+                                taskCard'
                 >
                     <h2 className='font-bold mt-4 xsm:mt-0 '>
                         {props.taskName}
                     </h2>
 
-                    <div className='m-12 xsm:m-2 flex items-center justify-center  icon-color2 icon-color'>
+                    <div className='m-12 xsm:m-2 flex items-center justify-center '>
                         <img className={'transition ' + hoverStat}  alt="tempImage" src={props.icon}></img>
                     </div>
                     {/* <p className=''>

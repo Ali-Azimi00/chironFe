@@ -1,19 +1,29 @@
-.shadow-card {
+.taskCard {
     box-shadow: inset  0px 1px 20px 0 rgba(255, 255, 255, 0.3);
-}
-
-.icon-color{
-    /* filter: sepia(100%);
-    -webkit-filter: sepia(100%); */
-
-    /* filter: invert(.8);
-    -webkit-filter:invert(.8) ; */
+    backdrop-filter: blur;
     
-    /* -webkit-filter:hue-rotate(100deg); */
-    /* filter:hue-rotate(300deg); */
-
 }
 
-.icon-color2{
-    filter:contrast(.8);
+.cardFadeOut{
+    opacity: 100%;
+    animation: 2s myFadeOut ease-in .5s;
+    animation-fill-mode:forwards;
 }
+@keyframes myFadeOut {
+    from {opacity:100%}
+    to {opacity:0%}   
+}
+
+.cardFadeIn{
+    opacity: 0%;
+    animation: 2.7s myFadeIn ease-in 2.4s;
+    animation-fill-mode:forwards;
+}
+@keyframes myFadeIn {
+    from {opacity:0%}
+    to {opacity:100%}   
+}
+/* @keyframes mySlide {
+    from {position: 0}
+    to {position: }   
+} */

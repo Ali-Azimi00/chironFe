@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../components/Card';
 import { tasks } from "../constants";
+import './component.css'
 
 
 function HeroCards() {
 
-    const [catState, setCatState] = useState('mind')
+    const [catState, setCatState] = useState('')
     const [showCats, setShowCats] = useState(true)
+    const [fadeStat, setFadeStat] = useState("")
+    const [fadeInStat, setFadeInStat] = useState("")
 
     useEffect(() => {
         loadStatCards();
@@ -33,32 +36,36 @@ function HeroCards() {
     }
 
     const categoryFork = (task: any) => {
-        setTimeout(()=>{setShowCats(false)}, 2800)
+        setTimeout(() => { setShowCats(false) }, 2500)
         setCatState(task.name)
+    }
+
+    const fadeAnimation = () => {
+        setFadeStat("cardFadeOut");
+        setFadeInStat('cardFadeIn')
     }
 
     return (
         <React.Fragment>
             <div className=''>
-                <div className=' 
-                    grid 
-                    xsm:grid-cols-2
-                    sm:grid-cols-3
-                    md:grid-cols-4
-                    lg:grid-cols-5
-                    xl:grid-cols-5
-                    gap-6'
+                <div style={{ opacity: "0%" }}
+                    className={fadeInStat +
+                        ' grid ' +
+                        'xsm:grid-cols-2 ' +
+                        'sm:grid-cols-3 ' +
+                        'md:grid-cols-4 ' +
+                        'lg:grid-cols-5 ' +
+                        'xl:grid-cols-5 ' +
+                        'gap-6'}
                 >
 
                     {showCats ? null : loadStatCards()}
 
                 </div>
 
-                <div className=' 
-                    grid 
-                    grid-cols-3
-                    xsm:grid-cols-2
-                    gap-6'
+                <div onClick={() => { fadeAnimation() }}
+                    className={'grid grid-cols-3 xsm:grid-cols-2 gap-6 '
+                        + fadeStat}
                 >
                     {showCats ? loadCatCards() : null}
 
