@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Bubble from './../components/Bubble.tsx'
 import './../components/component.css'
 
 function Landing() {
 
+    const [colorList] = useState(['red', 'blue', 'green','purple'])
+
 
     const loadBubbles = (amt: number) => {
         var list: any = [];
-        const colorList = ['red', 'blue', 'green']
+        // const colorList = ['red', 'blue', 'green']
 
         for (let i = 0; i < amt; i++) {
-            colorList.forEach((bg: string) => {
-                list.push(<Bubble color={'red'} />)
+            colorList.forEach((bc:string) => {
+                list.push(<Bubble color={bc} />)
             })
         }
         return (
@@ -25,12 +27,6 @@ function Landing() {
         <React.Fragment>
             <div className='bg-black w-screen overflow-hidden 
             py-4 overflow-hidden bubbleContainer'>
-                {/* <Bubble color={'red'} />
-                <Bubble color={'red'} />
-                <Bubble color={'red'} />
-                <Bubble color={'red'} />
-                <Bubble color={'red'} /> */}
-
                 <div className='bubbleRow' >
                     {loadBubbles(25)}
                 </div>

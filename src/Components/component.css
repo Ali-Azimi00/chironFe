@@ -26,8 +26,12 @@
 
 .bubble{
     box-shadow: inset  0px -60px 40px 0 rgba(3, 3, 3, 0.69);
-    min-width: 15vh;
-    min-height: 15vh;
+    /* min-width: 115px;
+    min-height: 115px; */
+    /* min-width: 15vh;
+    min-height: 15vh; */
+    min-width: 8rem;
+    min-height: 8rem;
     display: inline-block;
 }
 
