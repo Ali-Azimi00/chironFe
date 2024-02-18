@@ -23,7 +23,25 @@
     from {opacity:0%}
     to {opacity:100%}   
 }
-/* @keyframes mySlide {
-    from {position: 0}
-    to {position: }   
-} */
+
+.bubble{
+    box-shadow: inset  0px -60px 40px 0 rgba(3, 3, 3, 0.69);
+    min-width: 15vh;
+    min-height: 15vh;
+    display: inline-block;
+}
+
+.bubbleContainer{
+    border-top: 0px solid rgb(255, 255, 255, 0.1);
+    box-shadow: inset  0px 10px 10px 0 rgba(255, 255, 255, .1), inset  0px -10px 10px 0 rgba(255, 255, 255, .1);
+    border-top: 0px solid rgb(255, 255, 255, 0.1);
+}
+
+.bubbleRow{
+    display: flex;
+    margin: auto;
+    text-align: center;
+    justify-content: space-around;
+
+}
+

@@ -1,4 +1,5 @@
 import './App.css'
+import Landing from './pages/Landing'
 import Hero from './pages/Hero'
 import TaskSelect from './pages/TaskSelect'
 import NavBar from './components/NavBar'
@@ -15,8 +16,8 @@ function App() {
       {/* <div className='flex justify-center items-center mx-12'> */}
       <BrowserRouter>
         <Routes>
-
-          <Route path="/" element={<Hero />}></Route>
+          <Route path="/" element={<Landing />}></Route>
+          <Route path="/Today" element={<Hero />}></Route>
           <Route path="/SelectTasks" element={<TaskSelect />}></Route>
           <Route path="/Exp" element={<Experience />}></Route>
 

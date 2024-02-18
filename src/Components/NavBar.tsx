@@ -12,8 +12,8 @@ function classNames(...classes: string[]) {
 }
 
 const navigation = [
-    { crumb: 0, name: 'Home', href: '/', current: false },
-    { crumb: 1, name: 'Task', href: 'SelectTasks', current: false },
+    { crumb: 0, name: 'Today', href: 'Today', current: false },
+    { crumb: 1, name: 'Tasks', href: 'SelectTasks', current: false },
     { crumb: 2, name: 'Exp', href: 'Exp', current: false },
 
 ]
@@ -67,7 +67,7 @@ function NavBar() {
                                                     href={item.href}
                                                     className={classNames(
                                                         item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                                        'rounded-md px-3 py-2 text-sm font-medium'
+                                                        'rounded-md px-3 py-2 text-sm font-medium focus:ring-2'
                                                     )}
                                                 // aria-current={item.current ? 'page' : undefined}
                                                 >

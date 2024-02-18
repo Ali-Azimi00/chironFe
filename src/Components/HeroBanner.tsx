@@ -5,9 +5,8 @@ import '../App.css'
 function HeroBanner() {
 
     const [stats] = useState([
-        { title: "Strength", percent: 65, color: 'purple' },
-        { title: "Endurance", percent: 45, color: 'red' },
-        { title: "Intelligence", percent: 15, color: 'green' },
+        { title: "Physical", percent: 45, color: 'red' },
+        { title: "Mind", percent: 15, color: 'green' },
         { title: "Spirit", percent: 85, color: 'blue' },
 
     ]);
