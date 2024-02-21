@@ -10,9 +10,14 @@ function Landing() {
 
     return (
         <React.Fragment>
+                            <div></div>
 
-            <LandingBanner></LandingBanner>
+            <div className='welcome h-0'>
 
+                LVLUP
+            </div>
+
+            <LandingBanner />
         </React.Fragment>
     )
 }

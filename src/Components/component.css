@@ -1,31 +1,43 @@
 .taskCard {
-    box-shadow: inset  0px 1px 20px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0px 1px 20px 0 rgba(255, 255, 255, 0.3);
     backdrop-filter: blur;
-    
+
 }
 
-.cardFadeOut{
+.cardFadeOut {
     opacity: 100%;
     animation: 2s myFadeOut ease-in .5s;
-    animation-fill-mode:forwards;
-}
-@keyframes myFadeOut {
-    from {opacity:100%}
-    to {opacity:0%}   
+    animation-fill-mode: forwards;
 }
 
-.cardFadeIn{
+@keyframes myFadeOut {
+    from {
+        opacity: 100%
+    }
+
+    to {
+        opacity: 0%
+    }
+}
+
+.cardFadeIn {
     opacity: 0%;
     animation: 2.7s myFadeIn ease-in 2.4s;
-    animation-fill-mode:forwards;
-}
-@keyframes myFadeIn {
-    from {opacity:0%}
-    to {opacity:100%}   
+    animation-fill-mode: forwards;
 }
 
-.bubble{
-    box-shadow: inset  0px -30px 40px 0 rgba(3, 3, 3, 0.69);
+@keyframes myFadeIn {
+    from {
+        opacity: 0%
+    }
+
+    to {
+        opacity: 100%
+    }
+}
+
+.bubble {
+    box-shadow: inset 0px -30px 40px 0 rgba(3, 3, 3, 0.69);
     /* min-width: 115px;
     min-height: 115px; */
     /* min-width: 15vh;
@@ -35,26 +47,67 @@
     /* min-width: 4rem;
     min-height: 4rem; */
     display: inline-block;
-    
+
 }
 
-.bubbleContainer{
-    box-shadow:  0px -10px 10px 0px rgba(255, 255, 255, .1),   0px 10px 10px 0 rgba(255, 255, 255, .1);
+.bubbleContainer {
+    box-shadow: 0px -10px 10px 0px rgba(255, 255, 255, .1), 0px 10px 10px 0 rgba(255, 255, 255, .1);
     border-top: 10px solid rgb(5, 5, 5);
 }
 
-.bubbleRow{
+.bubbleRow {
     display: flex;
     margin: auto;
     text-align: center;
     justify-content: space-around;
 }
 
-.rowAnimate{
+.rowAnimate {
     animation: slider 5s forwards infinite
 }
+
 @keyframes slider {
-    from {left:0%}
-    to {left: 100%}
-  }
+    from {
+        left: 0%
+    }
+
+    to {
+        left: 100%
+    }
+}
+
+.welcome {
+    position: absolute;
+    margin: auto;
+    margin-top: 6vh;
+    margin-left: 25%;
+    width: 50%;
+    border: 3px solid green;
+    /* padding-top: -100rem; */
+    text-align: center;
+
+
+    
+
+    opacity: 65%;
+
+    font-family:fantasy;
+    font-size: 20rem;
+    /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+
+    /* font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; */
+
+ 
+}
+.welcome::before{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+
+
+
 
