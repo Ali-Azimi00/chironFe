@@ -19,12 +19,17 @@ export default {
         "black-100": "#100d25",
         "black-200": "#090325",
         "white-100": "#f3f3f3",
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        }
+      },
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
       }
-
-
-    },
-    
-    
+    },    
   },
   plugins: [],
 }

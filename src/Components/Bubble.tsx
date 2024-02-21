@@ -10,14 +10,19 @@ function Bubble(props: any) {
 
     return (
         <React.Fragment>
-            <span className='p-1 '>
-                {/* <span className={`bg-red-700 rounded-[100px] bubble`} ></span> */}
-                {/* <span className={`bg-green-700 rounded-[100px] bubble`} ></span> */}
-                {/* <span className={`bg-blue-700 rounded-[100px] bubble`} ></span> */}
-                {/* <span className={`bg-orange-700 rounded-[100px] bubble`} ></span> */}
-                {/* <span className={`bg-purple-700 rounded-[100px] bubble`} ></span> */}
+            <span className='p-1 cursor-none'> 
+            {/* cursor-none */}
+                {/* <span className={`bg-red-800 rounded-[100px] bubble`} ></span> */}
+                {/* <span className={`bg-green-800 rounded-[100px] bubble`} ></span> */}
+                {/* <span className={`bg-blue-800 rounded-[100px] bubble`} ></span> */}
+                {/* <span className={`bg-purple-800 rounded-[100px] bubble`} ></span> */}
+                {/* <span className={`bg-orange-800 rounded-[100px] bubble`} ></span> */}
+                {/* <span className={`bg-yellow-800 rounded-[100px] bubble`} ></span> */}
 
-                <span className={`bg-${props.color}-700 rounded-[100px] bubble`} ></span>
+
+
+                <span className={`bg-${props.color}-800 rounded-[100px] bubble 
+                                transition ease-out hover:animate-ping ease-out`} ></span>
             </span>
         </React.Fragment>
     )
