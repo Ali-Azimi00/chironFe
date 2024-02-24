@@ -1,7 +1,6 @@
 .taskCard {
     box-shadow: inset 0px 1px 20px 0 rgba(255, 255, 255, 0.3);
     backdrop-filter: blur;
-
 }
 
 .cardFadeOut {
@@ -14,7 +13,6 @@
     from {
         opacity: 100%
     }
-
     to {
         opacity: 0%
     }
@@ -30,7 +28,6 @@
     from {
         opacity: 0%
     }
-
     to {
         opacity: 100%
     }
@@ -51,8 +48,10 @@
 }
 
 .bubbleContainer {
+    position: fixed;
     box-shadow: 0px -10px 10px 0px rgba(255, 255, 255, .1), 0px 10px 10px 0 rgba(255, 255, 255, .1);
     border-top: 10px solid rgb(5, 5, 5);
+    /* height: 80%; */
 }
 
 .bubbleRow {
@@ -79,35 +78,27 @@
 .welcome {
     position: absolute;
     margin: auto;
-    margin-top: 6vh;
+    margin-top: 10vh;
     margin-left: 25%;
-    width: 50%;
-    border: 3px solid green;
+    width: screen;
+    /* border: 3px solid green; */
     /* padding-top: -100rem; */
     text-align: center;
-
-
-    
-
+    z-index: 5;
     opacity: 65%;
-
-    font-family:fantasy;
-    font-size: 20rem;
-    /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
-
-    /* font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; */
-
- 
-}
-.welcome::before{
-    height: 100px;
-    width: 100px;
-    background-color: red;
+    font-family: fantasy;
+    font-size: 20vw;
 }
 
 
+@media screen and (min-width: 600px) {
+    .welcome {
+        color: blue;
+    }
+}
 
-
+@media screen and (min-width: 1000px) {
+    .welcome {
+        color: red;
+    }
+}

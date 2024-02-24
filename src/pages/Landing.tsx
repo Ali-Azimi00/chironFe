@@ -10,10 +10,9 @@ function Landing() {
 
     return (
         <React.Fragment>
-                            <div></div>
+            <div></div>
 
             <div className='welcome h-0'>
-
                 LVLUP
             </div>
 
