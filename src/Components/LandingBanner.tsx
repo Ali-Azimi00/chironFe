@@ -8,7 +8,7 @@ function LandingBanner() {
     const rowSeparation = '-m-3';
 
 
-    let rowTotal = 3;
+    let rowTotal = 10;
 
   
   
