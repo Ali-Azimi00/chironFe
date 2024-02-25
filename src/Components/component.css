@@ -1,6 +1,7 @@
 .taskCard {
     box-shadow: inset 0px 1px 20px 0 rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 .cardFadeOut {
@@ -50,8 +51,8 @@
 .bubbleContainer {
     position: fixed;
     box-shadow: 0px -10px 10px 0px rgba(255, 255, 255, .1), 0px 10px 10px 0 rgba(255, 255, 255, .1);
-    border-top: 10px solid rgb(5, 5, 5);
-    height: 80%;
+    /* border-top: 10px solid rgb(5, 5, 5); */
+    height: 85%;
 }
 
 .bubbleRow {
@@ -78,7 +79,7 @@
 .welcome {
     position: absolute;
     margin: auto;
-    margin-top: 10vh;
+    /* margin-top: 10vh; */
     margin-left: 25%;
     width: screen;
     /* border: 3px solid green; */
@@ -88,6 +89,36 @@
     opacity: 65%;
     font-family: fantasy;
     font-size: 20vw;
+
+    text-shadow: white 0px 0 20px;
+}
+
+.welcome:hover{
+    /* z-index:0; */
+    
+    /* animation: strobe ease-out .33s infinite forwards ; */
+    animation: strobe .45s ease-in 0s infinite both running; ;
+
+    text-shadow: #FC0  0px 0px 200px;
+}
+@keyframes strobe {
+  
+    0% {text-shadow: #FC0 
+        0px 0px 30px
+    }
+    25%{ text-shadow: white 
+        0px -50px 30px
+    }
+    50%{ text-shadow:#FC0 
+        0px -100px 30px
+    }
+    75%{ text-shadow:white
+        0px -150px 30px
+    }
+    100%{ text-shadow:#FC0 
+        0px -500px 30px
+    }
+
 }
 
 

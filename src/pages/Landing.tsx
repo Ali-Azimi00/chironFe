@@ -10,10 +10,10 @@ function Landing() {
 
     return (
         <React.Fragment>
-            <div></div>
-
-            <div className='welcome h-0'>
-                LVLUP
+           
+           <div className='w-screen h-12 absolute'></div>
+            <div className='welcome h-0 cursor-none mt-[5rem]' onClick={()=>{console.log('hello')}}>
+                <a href='/Today'> LVLUP</a>
             </div>
 
             <LandingBanner />

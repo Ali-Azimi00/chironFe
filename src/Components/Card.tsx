@@ -9,7 +9,7 @@ function Card(props: any) {
 
     useEffect(() => {
         if (aniTog == true) {
-            setHoverStat(" ease-linear animate-bounce")          
+            setHoverStat(' animate-[wiggle_1s_ease-in-out_infinite] duration-300 ')          
         }
         else {
             setHoverStat("")
@@ -35,7 +35,7 @@ function Card(props: any) {
                     </h2>
 
                     <div className='m-12 xsm:m-2 flex items-center justify-center '>
-                        <img className={'transition ' + hoverStat}  alt="tempImage" src={props.icon}></img>
+                        <img className={' ' + hoverStat}  alt="tempImage" src={props.icon}></img>
                     </div>
                     {/* <p className=''>
                         description

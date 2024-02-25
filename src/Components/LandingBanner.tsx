@@ -22,7 +22,6 @@ function LandingBanner() {
 
             colorList.forEach((bc: string) => {
                 list.push(<Bubble color={bc} key={"Key: row-" + row  + "BB-" + bb+ "Color-"+ bc } />)
-                console.log("Key: row-" + row + "BB-" + bb+ "Color-"+ bc )
             })
             count++
         }
@@ -39,11 +38,11 @@ function LandingBanner() {
             let rB = "rowB:"+(count+i+1)
 
             list.push(
-                <div key="ra" className={'bubbleRow ' + rowSeparation}>
+                <div key={"ra"+rA }className={'bubbleRow ' + rowSeparation}>
                     {loadBubbles(26,rA)}
                 </div>)
             list.push(
-                <div  key="rb" className={'bubbleRow ' + rowSeparation}>
+                <div  key={"rb"+rB} className={'bubbleRow ' + rowSeparation}>
                     {loadBubbles(25,rB)}
                 </div>
             )
@@ -58,7 +57,7 @@ function LandingBanner() {
 
         <React.Fragment>
             <div className='bg-black w-screen overflow-hidden 
-                            py-4 overflow-hidden bubbleContainer'>
+                            -py-8 overflow-hidden bubbleContainer'>
 
                 {/* <div className={'bubbleRow mt-1 rowAnimate ' + rowSeparation} >
                     {loadBubbles(25, "rAlpha")}

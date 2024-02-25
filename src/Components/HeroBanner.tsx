@@ -22,16 +22,6 @@ function HeroBanner() {
         )
     }
 
-    // function changeStat() {
-
-    //     setStats((prevState) => {
-    //         let pd = { ...prevState };
-    //         pd[2].percent++
-    //         return pd
-    //     })
-
-    // }
-
 
     function loadStatBar() {
         console.log("UseEffect Ran")
@@ -44,8 +34,6 @@ function HeroBanner() {
             ))
         )
     }
-
-    //TODO FIX AUTO LOAD OF loadStatBar()
 
     return (
         <React.Fragment>
