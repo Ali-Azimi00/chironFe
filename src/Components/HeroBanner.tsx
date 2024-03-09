@@ -12,6 +12,22 @@ function HeroBanner() {
     ]);
 
 
+    // function loadPercentage() {
+    //     setStats((prevState) => {
+    //         let pd = { ...prevState }
+
+    //         pd[0].percent = 25
+    //         pd[1].percent = 25
+    //         pd[2].percent = 25
+
+    //         return pd;
+    //     })
+    // }
+
+    // useEffect(()=>{
+    //     loadPercentage();
+    // },[stats])
+
     function loadStatTitle() {
         return (
             stats.map((stat) => (
@@ -29,7 +45,7 @@ function HeroBanner() {
             stats.map((stat) => (
 
                 <div key={stat.color} className='w-full bg-gray-200 rounded-full h-3 dark:bg-gray-700 mb-3'>
-                    <div className={`bg-${stat.color}-600 h-3 rounded-full`} style={{ width: stat.percent.toString() + "%" }}></div>
+                    <div className={`transition-all ease-out duration-1000 h-full bg-${stat.color}-600 h-3 rounded-full`} style={{ width: stat.percent.toString() + "%" }}></div>
                 </div>
             ))
         )

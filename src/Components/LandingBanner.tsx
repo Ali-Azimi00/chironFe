@@ -10,18 +10,18 @@ function LandingBanner() {
 
     let rowTotal = 10;
 
-  
-  
+
+
 
 
     const loadBubbles = (amt: number, row: string) => {
         var list: any = [];
-        let count=0;
+        let count = 0;
         for (let i = 0; i < amt; i++) {
-            let bb= "b"+(count+1);
+            let bb = "b" + (count + 1);
 
             colorList.forEach((bc: string) => {
-                list.push(<Bubble color={bc} key={"Key: row-" + row  + "BB-" + bb+ "Color-"+ bc } />)
+                list.push(<Bubble color={bc} key={"Key: row-" + row + "BB-" + bb + "Color-" + bc} />)
             })
             count++
         }
@@ -32,18 +32,18 @@ function LandingBanner() {
 
     const loadRows = () => {
         var list: any = [];
-        let count=0;
+        let count = 0;
         for (let i = 0; i < rowTotal; i++) {
-            let rA = "rowA:"+(count+i+1)
-            let rB = "rowB:"+(count+i+1)
+            let rA = "rowA:" + (count + i + 1)
+            let rB = "rowB:" + (count + i + 1)
 
             list.push(
-                <div key={"ra"+rA }className={'bubbleRow ' + rowSeparation}>
-                    {loadBubbles(26,rA)}
+                <div key={"ra" + rA} className={'bubbleRow ' + rowSeparation}>
+                    {loadBubbles(26, rA)}
                 </div>)
             list.push(
-                <div  key={"rb"+rB} className={'bubbleRow ' + rowSeparation}>
-                    {loadBubbles(25,rB)}
+                <div key={"rb" + rB} className={'bubbleRow ' + rowSeparation}>
+                    {loadBubbles(25, rB)}
                 </div>
             )
             count++;
