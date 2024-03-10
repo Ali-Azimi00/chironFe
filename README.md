@@ -12,6 +12,9 @@ up your avatar while you level up IRL.
 ## Routing
 > npm i react-router-dom
 
+## HTTP Client
+> npm install axios
+
 ## TailWind CSS set up step-by-step:
 CLI:
 > npm create vite@latest my-project -- --template react
