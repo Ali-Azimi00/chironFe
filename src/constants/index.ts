@@ -65,7 +65,7 @@ const tasks = [
         category:"spirit"
     },
     {
-        name: "book",
+        name: "read",
         icon: book,
         category:"mind"
     },
@@ -117,7 +117,7 @@ const tasks = [
         category:"spirit"
     },
     {
-        name: "music",
+        name: "playMusic",
         icon: music,
         category: "spirit"
     },
@@ -152,7 +152,7 @@ const tasks = [
         category:"spirit"
     },
     {
-        name: "coding",
+        name: "code",
         icon: coding,
         category: "mind"
     },
