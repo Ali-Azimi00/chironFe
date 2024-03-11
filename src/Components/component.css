@@ -130,6 +130,19 @@
 }
 
 
+.taskBanner{
+    position: relative;
+    padding: 1%;
+    height: 100%;
+    width: screen;
+    
+    background-color: gray;
+
+
+}
+
+
+
 /* @media screen and (min-width: 600px) {
     .welcome {
         color: blue;

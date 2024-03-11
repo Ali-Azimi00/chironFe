@@ -4,6 +4,7 @@ import axios, { AxiosError } from 'axios';
 
 
 
+
 function TaskSelect() {
 
     const addRun = async () => {
@@ -36,8 +37,26 @@ function TaskSelect() {
     return (
         <React.Fragment>
 
-            <div>
-                banner
+            <div className='taskBanner '>
+                <div className={' grid ' +
+                        'xsm:grid-cols-2 ' +
+                        'sm:grid-cols-3 '}>
+
+                    <div className='taskCard py-2 px-220 border-none rounded-3xl h-250 
+                                xsm:px-16'>
+                        1
+                    </div>
+                    <div className='taskCard py-2 px-220 border-none rounded-3xl h-250 
+                                xsm:px-16'>
+                        1
+                    </div>
+                    <div className='taskCard py-2 px-220 border-none rounded-3xl h-250 
+                                xsm:px-16'>
+                        1
+                    </div>
+                </div>
+
+
             </div>
 
 
