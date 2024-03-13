@@ -1,11 +1,13 @@
-import React from 'react';
-import axios, { AxiosError } from 'axios';
+import React, { useState, useCallback } from 'react';
+import axios from 'axios';
 
 
 
 
 
 function TaskSelect() {
+
+    const [cat, setCat] = useState('mind');
 
     const addRun = async () => {
         const response = await axios.put(
@@ -34,13 +36,30 @@ function TaskSelect() {
     }
 
 
+        const getTasks =async (cat:string) => {
+            const response = await axios.get(
+                `http://localhost:8080/task/category/${cat}`,
+                {
+                    headers: {
+                        // Authorization: `Bearer ${accessToken}`,
+                        // 'Content-Type': 'application/json',
+                    },
+                }
+            );
+            console.log('hello')
+            console.log(response.data)
+            console.log(response.data[0].taskCategory[0].categoryType)
+        }
+    
+
+
     return (
         <React.Fragment>
 
             <div className='taskBanner '>
                 <div className={' grid ' +
-                        'xsm:grid-cols-2 ' +
-                        'sm:grid-cols-3 '}>
+                    'xsm:grid-cols-2 ' +
+                    'sm:grid-cols-3 '}>
 
                     <div className='taskCard py-2 px-220 border-none rounded-3xl h-250 
                                 xsm:px-16'>
@@ -55,19 +74,23 @@ function TaskSelect() {
                         1
                     </div>
                 </div>
-
-
             </div>
 
-
-            <div>
+            <div className='ml-96'>
                 <div>Select Tasks</div>
 
                 <div>
                     <span>
-                        Run
+                        Run Test
                         <button onClick={() => { addRun() }}>+</button>
                         <button onClick={() => { removeRun() }}>-</button>
+                    </span>
+                </div>
+                <div>
+                    <span>
+                        Get By Category
+                        <button onClick={() => { getTasks('mind') }}> mind </button>
+                        <button onClick={() => { getTasks('physical') }}>physical</button>
                     </span>
                 </div>
                 <div>
@@ -77,15 +100,6 @@ function TaskSelect() {
                         <button onClick={() => { removeRun() }}>-</button>
                     </span>
                 </div>
-                <div>
-                    <span>
-                        Run
-                        <button onClick={() => { addRun() }}>+</button>
-                        <button onClick={() => { removeRun() }}>-</button>
-                    </span>
-                </div>
-
-
 
             </div>
 
