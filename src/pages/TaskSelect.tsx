@@ -3,16 +3,13 @@ import React, { useState } from 'react';
 
 function TaskSelect() {
 
-
-
-    const [toggleSelect, setToggleSelect] = useState('')
+    const [toggleSelect, setToggleSelect] = useState('left-0')
 
     const togglePosition = {
-        'left': 'left-1',
+        'left': 'left-0',
         'center': 'left-1/3',
         'right': 'left-2/3'
     }
-
 
     const switchToggle = (selection: String) => {
         switch (selection) {
@@ -32,14 +29,9 @@ function TaskSelect() {
                 break
             }
         }
-
-
-
     }
 
     return (
-
-
         <React.Fragment>
 
             <div className='taskBanner '>
@@ -65,24 +57,25 @@ function TaskSelect() {
             <div className='ml-2'>
                 <div>Select Tasks</div>
 
-                <div className="w-full max-w-sm rounded h-16 m-auto shadow flex flex-col bg-purple-800">
+                {/* <div className="w-full max-w-sm rounded h-16 m-auto shadow flex flex-col "> */}
+                <div className='w-full max-w-sm rounded m-auto shadow flex flex-col '>
 
-                    <div className="mx-0 shadow rounded-full h-10 mt-4 flex py-1 px-0 relative items-center bg-purple-600">
 
+                    <div className="mx-0 shadow rounded-full h-10 mt-4 flex py-1 px-0 relative items-center toggleBar bg-purple-800">
                         <div onClick={() => { switchToggle('left') }}
                             className="w-full flex justify-center rounded-full cursor-pointer">
-                            <p>Left</p>
+                            <p>mind</p>
                         </div>
                         <div onClick={() => { switchToggle('center') }}
                             className="w-full flex justify-center rounded-full cursor-pointer ">
-                            <p>Center</p>
+                            <p>physical</p>
                         </div>
                         <div onClick={() => { switchToggle('right') }}
                             className="w-full flex justify-center rounded-full cursor-pointer ">
-                            <p>Right</p>
+                            <p>spirit</p>
                         </div>
                         <span
-                            className={`h-10 cursor-pointer ${toggleSelect}` +
+                            className={`h-10 cursor-pointer toggle ${toggleSelect}` +
                                 ' items-center justify-center w-1/3 rounded-full ' +
                                 ' transition-all absolute  ' +
                                 ' border-gray-100 border-solid border-2 '}
@@ -91,61 +84,10 @@ function TaskSelect() {
 
                         </span>
                     </div>
-
-
-
-
                 </div>
-
-
-
-
-                {/* <div>
-                    <span>
-                        Run Test
-                        <button onClick={() => { addRun() }}>+</button>
-                        <button onClick={() => { removeRun() }}>-</button>
-                    </span>
-                </div> */}
-                <div>
-                    <span>
-
-                 
-
-                    </span>
-                    {/* <span>
-
-                        <DropDown category={'physical'} ></DropDown>
-
-                    </span>
-                    <span>
-
-                        <DropDown category={'spirit'} ></DropDown>
-
-                    </span> */}
-
-                </div>
-                {/* <div>
-                    <span>
-                        Get By Category
-                        <button onClick={() => { getTasks('mind') }}> mind </button>
-                        <button onClick={() => { getTasks('physical') }}>physical</button>
-                        <button onClick={() => { getTasks('spirit') }}>physical</button>
-                    </span>
-                </div>
-                <div>
-                    <span>
-                        Run
-                        <button onClick={() => { addRun() }}>+</button>
-                        <button onClick={() => { removeRun() }}>-</button>
-                    </span>
-                </div>
-                <div>
-                    {taskNull ? null : showTasks(tasks)}
-                </div> */}
+                {/* </div> */}
 
             </div>
-
         </React.Fragment>
     )
 }

@@ -78,6 +78,18 @@
     }
 }
 
+
+.toggle{
+    box-shadow: inset 0px 1px 8px 0 rgb(255, 255, 255);
+}
+.toggleBar{
+    box-shadow: inset 0px 1px 8px 0 rgb(255, 255, 255);
+}
+
+
+
+
+
 .welcome {
     position: absolute;
     margin: auto;
