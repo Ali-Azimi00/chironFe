@@ -9,6 +9,7 @@ function LandingBanner() {
 
 
     let rowTotal = 10;
+    let rowCount =26;
 
 
 
@@ -39,11 +40,11 @@ function LandingBanner() {
 
             list.push(
                 <div key={"ra" + rA} className={'bubbleRow ' + rowSeparation}>
-                    {loadBubbles(26, rA)}
+                    {loadBubbles(rowCount, rA)}
                 </div>)
             list.push(
                 <div key={"rb" + rB} className={'bubbleRow ' + rowSeparation}>
-                    {loadBubbles(25, rB)}
+                    {loadBubbles(rowCount-1, rB)}
                 </div>
             )
             count++;
