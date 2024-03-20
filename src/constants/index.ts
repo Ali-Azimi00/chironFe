@@ -45,6 +45,16 @@ const tasks = [
         category:"category"
     },
     {
+        name: "mind",
+        icon: yyMind,
+        category:"category"
+    },
+    {
+        name: "spirit",
+        icon: lotus,
+        category: 'category'
+    },
+    {
         name: "run",
         icon: run,
         category:"physical"
@@ -79,18 +89,10 @@ const tasks = [
         icon: yoga,
         category:"physical"
     },
-    {
-        name: "mind",
-        icon: yyMind,
-        category:"category"
-    },
+ 
 
 
-    {
-        name: "spirit",
-        icon: lotus,
-        category: 'category'
-    },
+ 
     {
         name: "cycling",
         icon: cycling,
