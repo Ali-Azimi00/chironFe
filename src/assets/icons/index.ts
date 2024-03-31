@@ -4,6 +4,7 @@ import meditate from './lotus-pose.png';
 import muscle from './muscle-w.png';
 import book from './open-book.png';
 import pullup from './pull-up.png';
+import pushup from './pushup-w.png';
 import tea from './tea.png';
 import run from './treadmill.png';
 import yyMind from './yin-yang-w.png';
@@ -38,6 +39,7 @@ export {
    muscle,
    book,
    pullup,
+   pushup,
    tea,
    run,
    yoga,

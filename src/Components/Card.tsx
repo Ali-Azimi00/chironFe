@@ -28,13 +28,13 @@ function Card(props: any) {
             >
                 <div className='py-2 px-220 border-none rounded-3xl 
                                 xsm:px-16
-                                taskCard'
+                                taskCard h-m'
                 >
                     <h2 className='font-bold mt-4 xsm:mt-0 '>
                         {props.taskName}
                     </h2>
 
-                    <div className='m-12 xsm:m-2 flex items-center justify-center '>
+                    <div className='taskCardImg mx-auto mt-2 xsm:m-2 flex items-center justify-center '>
                         <img className={' ' + hoverStat}  alt="tempImage" src={props.icon}></img>
                     </div>
                     {/* <p className=''>

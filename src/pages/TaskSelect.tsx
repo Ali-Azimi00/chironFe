@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TaskTable from '../components/TaskTable';
+import Card from '../components/Card';
+import {tasks} from '../constants';
 
 
 function TaskSelect() {
@@ -44,14 +46,23 @@ function TaskSelect() {
         setPersonTasks(response.data)
     }
 
+    const getTaskIcon = (taskName:string)=>{
+        let list:any = []
+        tasks.filter((t)=> t.name.toLowerCase() == taskName.toLowerCase() ? list.push(t.icon) : null);   
+        return list[0]; 
+    }
+
     const loadPersonTasks = () => {
         return (
             personTasks.map((task: any) => (
-                <div className='taskCard py-2 mx-5 px-220 border-none rounded-full h-250 
-                xsm:px-16' key={task.taskId}>
-                    {task.taskName}
+                <div className='text-center' key={task.taskId}>
+                    <Card 
+                    cssProp={''}
+                    fade={false} 
+                    taskName={task.taskName} 
+                    icon={getTaskIcon(task.taskName)}>
+                    </Card>
                 </div>
-
             ))
         )
     }
@@ -90,22 +101,18 @@ function TaskSelect() {
 
     return (
         <React.Fragment>
-
-            <div className='taskBanner bg-gray-800 mt-4'>
+ {/* bg-gray-800 */}
+            <div className='taskBanner bg-transparent mt-4 mx-auto'>
                 <div className={' grid ' +
                     'xsm:grid-cols-2 ' +
-                    'sm:grid-cols-3 '}>
-
+                    'sm:grid-cols-5 ' +
+                    'gap-6'}>
                     {loadPersonTasks()}
-
                 </div>
             </div>
 
             <div className='ml-2'>
-
                 <div className='w-full max-w-sm rounded m-auto shadow flex flex-col '>
-
-
                     <div className="mx-0 shadow rounded-full h-10 mt-4 flex py-1 px-0 relative items-center toggleBar bg-purple-800">
                         <div onClick={() => { switchToggle('mind') }}
                             className="w-full flex justify-center rounded-full cursor-pointer">
@@ -126,11 +133,10 @@ function TaskSelect() {
                                 ' border-gray-100 border-solid border-2 '}
                         // +    // bg-indigo-600 shadow text-white flex 
                         >
-
                         </span>
                     </div>
                 </div>
-                <div className='mt-4 min-'>
+                <div className='mt-4 max-h-2'>
                     <TaskTable tList={taskList} currentCat={currentCat}></TaskTable>
                 </div>
             </div>

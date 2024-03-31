@@ -6,6 +6,7 @@ import {
     muscle,
     run,
     pullup,
+    pushup,
     book,
     yyMind,
     yoga,
@@ -37,6 +38,11 @@ const tasks = [
     {
         name: "pullup",
         icon: pullup,
+        category:"physical"
+    },
+    {
+        name: "pushup",
+        icon: pushup,
         category:"physical"
     },
     {
