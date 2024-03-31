@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TaskTable from '../components/TaskTable';
-import Card from '../components/Card';
-import {tasks} from '../constants';
+import TaskBanner from '../components/TaskBanner';
 
 
 function TaskSelect() {
@@ -10,6 +9,8 @@ function TaskSelect() {
     const [toggleSelect, setToggleSelect] = useState('left-0')
     const [taskList, setTaskList] = useState([]);
     const [currentCat, setCurrentCat] = useState('mind');
+
+
     const [personTasks, setPersonTasks] = useState([]);
 
 
@@ -46,27 +47,6 @@ function TaskSelect() {
         setPersonTasks(response.data)
     }
 
-    const getTaskIcon = (taskName:string)=>{
-        let list:any = []
-        tasks.filter((t)=> t.name.toLowerCase() == taskName.toLowerCase() ? list.push(t.icon) : null);   
-        return list[0]; 
-    }
-
-    const loadPersonTasks = () => {
-        return (
-            personTasks.map((task: any) => (
-                <div className='text-center' key={task.taskId}>
-                    <Card 
-                    cssProp={''}
-                    fade={false} 
-                    taskName={task.taskName} 
-                    icon={getTaskIcon(task.taskName)}>
-                    </Card>
-                </div>
-            ))
-        )
-    }
-
     useEffect(() => {
         getTasks(currentCat);
         getPersonTasks();
@@ -90,7 +70,6 @@ function TaskSelect() {
             case 'spirit': {
                 setToggleSelect(togglePosition.spirit)
                 setCurrentCat('spirit')
-                // getTasks("spirit")
                 break
             }
         }
@@ -101,14 +80,8 @@ function TaskSelect() {
 
     return (
         <React.Fragment>
- {/* bg-gray-800 */}
-            <div className='taskBanner bg-transparent mt-4 mx-auto'>
-                <div className={' grid ' +
-                    'xsm:grid-cols-2 ' +
-                    'sm:grid-cols-5 ' +
-                    'gap-6'}>
-                    {loadPersonTasks()}
-                </div>
+            <div>
+                <TaskBanner personTaskList={personTasks}></TaskBanner>
             </div>
 
             <div className='ml-2'>
@@ -136,6 +109,8 @@ function TaskSelect() {
                         </span>
                     </div>
                 </div>
+
+
                 <div className='mt-4 max-h-2'>
                     <TaskTable tList={taskList} currentCat={currentCat}></TaskTable>
                 </div>

@@ -41,11 +41,6 @@ const tasks = [
         category:"physical"
     },
     {
-        name: "pushup",
-        icon: pushup,
-        category:"physical"
-    },
-    {
         name: "physical",
         icon: muscle,
         category:"category"
@@ -63,6 +58,11 @@ const tasks = [
     {
         name: "run",
         icon: run,
+        category:"physical"
+    },
+    {
+        name: "pushup",
+        icon: pushup,
         category:"physical"
     },
     {
