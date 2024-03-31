@@ -80,39 +80,46 @@ function TaskSelect() {
 
     return (
         <React.Fragment>
-            <div>
-                <TaskBanner personTaskList={personTasks}></TaskBanner>
-            </div>
+            <div className='xl:flex ' style={{justifyContent:"space-evenly"}}>
+                <div className=' '>
 
-            <div className='ml-2'>
-                <div className='w-full max-w-sm rounded m-auto shadow flex flex-col '>
-                    <div className="mx-0 shadow rounded-full h-10 mt-4 flex py-1 px-0 relative items-center toggleBar bg-purple-800">
-                        <div onClick={() => { switchToggle('mind') }}
-                            className="w-full flex justify-center rounded-full cursor-pointer">
-                            <p>mind</p>
-                        </div>
-                        <div onClick={() => { switchToggle('physical') }}
-                            className="w-full flex justify-center rounded-full cursor-pointer ">
-                            <p>physical</p>
-                        </div>
-                        <div onClick={() => { switchToggle('spirit') }}
-                            className="w-full flex justify-center rounded-full cursor-pointer ">
-                            <p>spirit</p>
-                        </div>
-                        <span
-                            className={`h-10 cursor-pointer toggle ${toggleSelect}` +
-                                ' items-center justify-center w-1/3 rounded-full ' +
-                                ' transition-all absolute  ' +
-                                ' border-gray-100 border-solid border-2 '}
-                        // +    // bg-indigo-600 shadow text-white flex 
-                        >
-                        </span>
+                    <div>
+                        <TaskBanner personTaskList={personTasks}></TaskBanner>
                     </div>
+
                 </div>
+                <div className=' '>
+                    <div className=''>
+                        <div className='w-full max-w-sm rounded mx-auto shadow flex flex-col '>
+                            <div className="shadow rounded-full h-10 mt-4 flex py-1 px-0 relative items-center toggleBar bg-purple-800">
+                                <div onClick={() => { switchToggle('mind') }}
+                                    className="w-full flex justify-center rounded-full cursor-pointer">
+                                    <p>mind</p>
+                                </div>
+                                <div onClick={() => { switchToggle('physical') }}
+                                    className="w-full flex justify-center rounded-full cursor-pointer ">
+                                    <p>physical</p>
+                                </div>
+                                <div onClick={() => { switchToggle('spirit') }}
+                                    className="w-full flex justify-center rounded-full cursor-pointer ">
+                                    <p>spirit</p>
+                                </div>
+                                <span
+                                    className={`h-10 cursor-pointer toggle ${toggleSelect}` +
+                                        ' items-center justify-center w-1/3 rounded-full ' +
+                                        ' transition-all absolute  ' +
+                                        ' border-gray-100 border-solid border-2 '}
+                                // +    // bg-indigo-600 shadow text-white flex 
+                                >
+                                </span>
+                            </div>
+                        </div>
 
 
-                <div className='mt-4 max-h-2'>
-                    <TaskTable tList={taskList} currentCat={currentCat}></TaskTable>
+                        <div className='mt-4 max-h-2'>
+                            <TaskTable tList={taskList} currentCat={currentCat}></TaskTable>
+                        </div>
+                    </div>
                 </div>
             </div>
         </React.Fragment>

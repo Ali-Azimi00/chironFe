@@ -28,7 +28,7 @@ function HeroCards() {
     const loadCatCards = () => {
         return (
             tasks.filter((task) => task.category === 'category').map((task) => (
-                <div className='delay-100 lg:px-6' key={task.icon} onClick={() => { categoryFork(task) }} >
+                <div className='delay-100 mx-auto ' key={task.icon} onClick={() => { categoryFork(task) }} >
                     <Card fade={true} taskName={task.name} icon={task.icon}></Card>
                 </div>
             ))
@@ -47,16 +47,19 @@ function HeroCards() {
 
     return (
         <React.Fragment>
-            <div className=''>
-                <div style={{ opacity: "0%" }}
-                    className={fadeInStat +
+            <div className='mx-auto flex' 
+            style={{justifyContent:"center"}}
+            >
+                <div 
+                    className={fadeInStat + 
                         ' grid ' +
                         'xsm:grid-cols-2 ' +
                         'sm:grid-cols-3 ' +
                         'md:grid-cols-4 ' +
                         'lg:grid-cols-5 ' +
-                        'xl:grid-cols-5 ' +
+                        'xl:grid-cols-6 ' +
                         'gap-6'}
+                        style={{ opacity: "0%"}}
                 >
 
                     {showCats ? null : loadStatCards()}
@@ -64,7 +67,7 @@ function HeroCards() {
                 </div>
 
                 <div onClick={() => { fadeAnimation() }}
-                    className={'grid grid-cols-3 xsm:grid-cols-2 gap-6 '
+                    className={'grid grid-cols-3 xsm:grid-cols-1 gap-6  '
                         + fadeStat}
                 >
                     {showCats ? loadCatCards() : null}

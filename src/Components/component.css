@@ -2,11 +2,19 @@
     box-shadow: inset 0px 1px 20px 0 rgba(255, 255, 255, 0.3);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
+    min-width: 10rem;
+    min-height: 10rem;
 
+    max-width: 10rem;
     max-height: 15rem;
 }
 
+.fiftyWidth{
+    width:100%;
+}
+
 .taskCardImg{
+    min-width:4rem;
     max-width:40%;
 }
 
@@ -163,9 +171,10 @@
     height: 100%;
     width: screen;
     
-    background-color: gray;
+    /* background-color: gray; */
 
-
+    display: flex;
+    justify-content: space-evenly;
 }
 
 

@@ -23,18 +23,18 @@ function Card(props: any) {
             <div onClick={() => {setAniTog(!aniTog)}}
                 className={'transition ease-linear transform  hover:animate-pulse '+
                             'hover:scale-110 duration-500 inline '+
-                            'xl:min-w-full'}
+                            'xl:min-w-full '}
                 style={{ backdropFilter: "blur(10px)"}}
             >
                 <div className='py-2 px-220 border-none rounded-3xl 
-                                xsm:px-16
+                                xsm:mx-auto
                                 taskCard h-m'
                 >
                     <h2 className='font-bold mt-4 xsm:mt-0 '>
                         {props.taskName}
                     </h2>
 
-                    <div className='taskCardImg mx-auto mt-2 xsm:m-2 flex items-center justify-center '>
+                    <div className='taskCardImg mx-auto mt-2 flex '>
                         <img className={' ' + hoverStat}  alt="tempImage" src={props.icon}></img>
                     </div>
                     {/* <p className=''>
