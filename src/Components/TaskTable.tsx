@@ -1,8 +1,30 @@
 import React from 'react'
 import { tasks } from "../constants";
+import axios from 'axios';
 
 
 function TaskTable(props: any) {
+
+    const addTaskToList = async(taskId:any)=>{
+        const response = await axios.put(
+            `http://localhost:8080/person/1/task_add/${taskId}`
+         
+        )
+        props.taskSizer(taskId)
+        console.log(response)
+    }
+
+
+    const removeTaskFromList=async (taskId:any)=>{
+        const response = await axios.put(
+            `http://localhost:8080/person/1/task_remove/${taskId}`
+        )
+        props.taskSizer( 100+ taskId)
+    }
+
+
+
+
 
 
     const loadRow = () => {
@@ -48,8 +70,8 @@ function TaskTable(props: any) {
                         {t.taskMinCount} <span>{t.taskUnit}</span>
                     </td>
                     <td className="px-6 py-4">
-                        <button className='rounded-r-none'>+</button>
-                        <button className='rounded-l-none'>-</button>
+                        <button onClick={()=>{addTaskToList(t.taskId)}} className='rounded-r-none'>+</button>
+                        <button onClick={()=>{removeTaskFromList(t.taskId)}} className='rounded-l-none'>-</button>
                     </td>
                 </tr>
             ))

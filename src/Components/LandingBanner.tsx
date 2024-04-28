@@ -58,7 +58,7 @@ function LandingBanner() {
 
         <React.Fragment>
             <div className='bg-black w-screen overflow-hidden 
-                            -py-8 overflow-hidden bubbleContainer'>
+                            -py-8 overflow-hidden  bubbleContainer '>
 
                 {/* <div className={'bubbleRow mt-1 rowAnimate ' + rowSeparation} >
                     {loadBubbles(25, "rAlpha")}

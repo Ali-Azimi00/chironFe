@@ -9,6 +9,7 @@ function TaskSelect() {
     const [toggleSelect, setToggleSelect] = useState('left-0')
     const [taskList, setTaskList] = useState([]);
     const [currentCat, setCurrentCat] = useState('mind');
+    const [taskListSize, setTaskListSize] = useState(6);
 
 
     const [personTasks, setPersonTasks] = useState([]);
@@ -50,7 +51,7 @@ function TaskSelect() {
     useEffect(() => {
         getTasks(currentCat);
         getPersonTasks();
-    }, [currentCat])
+    }, [currentCat,taskListSize])
 
 
 
@@ -117,7 +118,7 @@ function TaskSelect() {
 
 
                         <div className='mt-4 max-h-2'>
-                            <TaskTable tList={taskList} currentCat={currentCat}></TaskTable>
+                            <TaskTable taskSizer={setTaskListSize} tList={taskList} currentCat={currentCat}></TaskTable>
                         </div>
                     </div>
                 </div>

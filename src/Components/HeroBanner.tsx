@@ -12,6 +12,9 @@ function HeroBanner() {
     ]);
 
 
+    const [progress,setProgress] = useState(45);
+
+
     // function loadPercentage() {
     //     setStats((prevState) => {
     //         let pd = { ...prevState }
@@ -40,10 +43,8 @@ function HeroBanner() {
 
 
     function loadStatBar() {
-        console.log("UseEffect Ran")
         return (
             stats.map((stat) => (
-
                 <div key={stat.color} className='w-full bg-gray-200 rounded-full h-3 dark:bg-gray-700 mb-3'>
                     <div className={`transition-all ease-out duration-1000 h-full bg-${stat.color}-600 h-3 rounded-full`} style={{ width: stat.percent.toString() + "%" }}></div>
                 </div>
@@ -56,7 +57,10 @@ function HeroBanner() {
 
             <div className='-mb-48 '>
                 <div className='fade-img '>
-                    <div className='statBox pt-8'>
+                    <div className='w-full bg-gray-200 rounded-full h-3 dark:bg-gray-700 mb-3'>
+                        <div className={`transition-all ease-out duration-1000 h-full bg-purple-600 h-3 rounded-full`} style={{ width: progress.toString() + "%" }}></div>
+                    </div>
+                    {/* <div className='statBox pt-8'>
                         <div className='border p-4  w-1/2  xsm:w-full   rounded-2xl shadow-2xl flex'>
 
                             <div>
@@ -65,17 +69,17 @@ function HeroBanner() {
 
                             <div className='w-full ml-2 mt-2 '>
 
-                                {/* <div className={`bg-purple-600 h-3 rounded-full`} style={{ width: "60%" }}></div>
+                                <div className={`bg-purple-600 h-3 rounded-full`} style={{ width: "60%" }}></div>
                                     <div className={`bg-red-600 h-3 rounded-full`} style={{ width: "80%" }}></div>
                                     <div className={`bg-green-600 h-3 rounded-full`} style={{ width: "20%" }}></div>
-                                    <div className={`bg-blue-600 h-3 rounded-full`} style={{ width: "70%" }}></div> */}
+                                    <div className={`bg-blue-600 h-3 rounded-full`} style={{ width: "70%" }}></div>
 
                                 {loadStatBar()}
                             </div>
 
                         </div>
 
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </React.Fragment >
