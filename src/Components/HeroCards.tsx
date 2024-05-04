@@ -9,10 +9,10 @@ import Modal from './Modal';
 function HeroCards() {
 
     const [personTasks, setPersonTasks] = useState([]);
-    const [openModal, setOpenModal]=useState(false);
-    
-    // const [openStat, setOpenStat]=useState(false);
-    const [selectedTask,setSelectedTask] = useState([]);
+    const [openModal, setOpenModal] = useState(false);
+
+    const [selectedTask, setSelectedTask] = useState([]);
+    const [currentCount, setCurrentCount] = useState(0)
 
 
     useEffect(() => {
@@ -37,20 +37,10 @@ function HeroCards() {
         setPersonTasks(response.data)
     }
 
-    // const addExperience = async (taskId: Int16Array) => {
-    //     const response = await axios.post(
-    //         `http://localhost:8080/exp/1/`, {
-    //         expCount: 2,
-    //         task: {
-    //             "taskId": taskId
-    //         }
-    //     }
-    //     )
-
-    // }
 
     const openCardModal = (task: any) => {
         setSelectedTask(task);
+        getTodayExp(task.taskId)
         setOpenModal(true)
     }
 
@@ -72,13 +62,35 @@ function HeroCards() {
         )
     }
 
+    const getTodayExp = async (tId: Int16Array) => {
+        const response = await axios.get(
+            `http://localhost:8080/exp/person/1/Today`
+        )
+        console.log(response.data)
+        let todayExp = response.data
+
+        let count = todayExp.filter((xp: any) => xp.task.taskId === tId)
+        
+
+        if (count.length) {
+            setCurrentCount(count[0].expCount)
+            console.log(currentCount)
+        }
+        else {
+            setCurrentCount(0)
+            console.log(currentCount)
+
+        }
+
+    }
+
 
     return (
         <React.Fragment>
             <div className='mx-auto flex'
                 style={{ justifyContent: "center" }}
             >
-                   <div onClick={() => { }}
+                <div onClick={() => { }}
                     className={
                         ' grid ' +
                         'xxsm:grid-cols-1 ' +
@@ -97,12 +109,16 @@ function HeroCards() {
                 </div>
 
             </div>
-            
+
             <div className={openModal ? "" : "hidden"}>
-            <Modal setOpenModal={setOpenModal} selectedTask={selectedTask}></Modal>
-            
+                <Modal setOpenModal={setOpenModal}
+                    selectedTask={selectedTask}
+                    currentCount={currentCount}
+
+                />
+
             </div>
-          
+
         </React.Fragment>
     )
 }
