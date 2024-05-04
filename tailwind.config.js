@@ -5,7 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",  ],
   theme: {
     extend: {
-      screens: { 'xsm': { 'max': '640px' } },
+      screens: { 'xsm': { 'max': '640px' }, 'xxsm':{'max':'400px'}} ,
       margin: {
         '5p': '5%',
       },
