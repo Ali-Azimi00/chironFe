@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import '../App.css'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from './../assets/AAwhite-trans.png'
+import axios from 'axios';
+import Modal from '../components/Modal'
 
 
 
@@ -19,6 +21,37 @@ const navigation = [
 ]
 
 function NavBar() {
+
+    const [progCount, setProgCount]=useState(0);
+    const [progress, setProgress] = useState(0);
+    // const [completedCount, setCompletedCount] = useState(0);
+
+    console.log()
+
+    useEffect(()=>{
+        getTodayExp()
+        setProgress((progCount/12)*100);
+    },[progCount])
+
+    const getTodayExp = async () => {
+        const response = await axios.get(
+            `http://localhost:8080/exp/person/1/Today`
+        )
+
+        let totalCount = 0;
+
+        response.data.forEach((element: any) => {
+            let max = element.task.taskMinCount;
+            let count = element.expCount;
+
+            count / max == 1 ? totalCount++ : null;
+
+            console.log(totalCount)
+
+        });
+
+        setProgCount(totalCount);
+    }
 
 
 
@@ -70,8 +103,8 @@ function NavBar() {
                                                     key={item.crumb}
                                                     href={item.href}
                                                     className={classNames(
-                                                        item.current ? 'bg-gray-900 text-white' : 
-                                                        'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                        item.current ? 'bg-gray-900 text-white' :
+                                                            'text-gray-300 hover:bg-gray-700 hover:text-white',
                                                         'rounded-md px-3 py-2 text-sm font-medium focus:ring-2'
                                                     )}
                                                 // aria-current={item.current ? 'page' : undefined}
@@ -128,8 +161,8 @@ function NavBar() {
                                                     {({ active }) => (
                                                         <a
                                                             href="#"
-                                                            className={classNames(active ? 'bg-gray-100' : 
-                                                            '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                            className={classNames(active ? 'bg-gray-100' :
+                                                                '', 'block px-4 py-2 text-sm text-gray-700')}
                                                         >
                                                             Your Profile
                                                         </a>
@@ -139,8 +172,8 @@ function NavBar() {
                                                     {({ active }) => (
                                                         <a
                                                             href="#"
-                                                            className={classNames(active ? 'bg-gray-100' : 
-                                                            '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                            className={classNames(active ? 'bg-gray-100' :
+                                                                '', 'block px-4 py-2 text-sm text-gray-700')}
                                                         >
                                                             Settings
                                                         </a>
@@ -150,8 +183,8 @@ function NavBar() {
                                                     {({ active }) => (
                                                         <a
                                                             href="#"
-                                                            className={classNames(active ? 'bg-gray-100' : 
-                                                            '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                            className={classNames(active ? 'bg-gray-100' :
+                                                                '', 'block px-4 py-2 text-sm text-gray-700')}
                                                         >
                                                             Sign out
                                                         </a>
@@ -172,8 +205,8 @@ function NavBar() {
                                         as="a"
                                         href={item.href}
                                         className={classNames(
-                                            item.current ? 'bg-gray-900 text-white' : 
-                                            'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                            item.current ? 'bg-gray-900 text-white' :
+                                                'text-gray-300 hover:bg-gray-700 hover:text-white',
                                             'block rounded-md px-3 py-2 text-base font-medium'
                                         )}
                                         aria-current={item.current ? 'page' : undefined}
@@ -187,6 +220,10 @@ function NavBar() {
                 )}
             </Disclosure>
 
+
+            <div className='w-full bg-gray-200  h-3 dark:bg-gray-700 mb-0' onClick={() => { getTodayExp() }}>
+                <div className={`transition-all ease-out duration-1000 h-full bg-purple-600 h-3 rounded-r-3xl`} style={{ width: progress.toString() + "%" }}></div>
+            </div>
 
         </React.Fragment>
     )

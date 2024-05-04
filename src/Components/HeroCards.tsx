@@ -66,22 +66,16 @@ function HeroCards() {
         const response = await axios.get(
             `http://localhost:8080/exp/person/1/Today`
         )
-        console.log(response.data)
-        let todayExp = response.data
 
+        let todayExp = response.data
         let count = todayExp.filter((xp: any) => xp.task.taskId === tId)
-        
 
         if (count.length) {
             setCurrentCount(count[0].expCount)
-            console.log(currentCount)
         }
         else {
             setCurrentCount(0)
-            console.log(currentCount)
-
         }
-
     }
 
 
