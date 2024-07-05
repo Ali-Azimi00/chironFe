@@ -11,9 +11,15 @@ function Landing() {
     return (
         <React.Fragment>
 
-            <div className='w-screen h-12 absolute'></div>
-            <div className='welcome h-0 cursor-none mt-[5rem]' onClick={() => { console.log('hello') }}>
-                <a className='cursor-none' href='/Today'> LVLUP</a>
+            <div className=' absolute'></div>
+            <div className=' cursor-none 
+            content-center justify-content-center absolute z-50 inset-0  
+            m-auto w-full max-w-[600px] h-[3px]
+            xsm:text-9xl mt-[10%]
+            welcome 
+            '
+                onClick={() => { console.log('hello') }}>
+                <a className='cursor-none m-0' href='/Today'> LVLUP</a>
             </div>
 
             <LandingBanner />

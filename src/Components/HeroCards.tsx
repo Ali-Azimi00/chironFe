@@ -1,5 +1,5 @@
-import React, { useEffect,  useState } from 'react';
-import Card from '../components/Card';
+import React, { useEffect, useState } from 'react';
+import Card from './Card';
 import { tasks } from "../constants";
 import './component.css'
 import axios from 'axios';
@@ -32,7 +32,7 @@ function HeroCards(props: any) {
 
     useEffect(() => {
         getPersonTasks()
-    }, []) 
+    }, [])
 
     const getTaskIcon = (taskName: string) => {
         let list: any = []
@@ -92,7 +92,7 @@ function HeroCards(props: any) {
         return (
             personTasks.map((task: any) => (
                 <button className='buttonClear text-center  cursor-pointer hover:scale-105 ' key={task.taskId}
-                    onClick={() => { openCardModal(task)}}
+                    onClick={() => { openCardModal(task) }}
                 >
                     <Card
                         cssProp={''}
@@ -107,7 +107,7 @@ function HeroCards(props: any) {
     }
 
     return (
-        <React.Fragment>        
+        <React.Fragment>
             <div className='mx-auto flex'
                 style={{ justifyContent: "center" }}
             >

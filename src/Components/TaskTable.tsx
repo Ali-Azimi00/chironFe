@@ -97,7 +97,7 @@ function TaskTable(props: any) {
                             Minimum
                         </th>
                         <th scope="col" className="px-12 py-3">
-                            +/-
+                            add/remove
                         </th>
                     </tr>
                     </thead>

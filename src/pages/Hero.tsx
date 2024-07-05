@@ -43,7 +43,7 @@ function Hero() {
 
 
     const loadProgBar = () => {
-        
+
         return (
             <div className='w-full bg-gray-200  h-3 dark:bg-gray-700 mb-0 cursor-pointer'>
                 <div className={`cursor-pointer transition-all ease-out duration-1000 

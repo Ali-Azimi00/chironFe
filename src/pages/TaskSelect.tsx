@@ -51,7 +51,7 @@ function TaskSelect() {
     useEffect(() => {
         getTasks(currentCat);
         getPersonTasks();
-    }, [currentCat,taskListSize])
+    }, [currentCat, taskListSize])
 
 
 
@@ -81,7 +81,7 @@ function TaskSelect() {
 
     return (
         <React.Fragment>
-            <div className='xl:flex ' style={{justifyContent:"space-evenly"}}>
+            <div className='xl:flex ' style={{ justifyContent: "space-evenly" }}>
                 <div className=' '>
 
                     <div>

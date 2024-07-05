@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Bubble from './../components/Bubble.tsx'
+import Bubble from './Bubble.tsx'
 import './../components/component.css'
 
 function LandingBanner() {
@@ -9,7 +9,7 @@ function LandingBanner() {
 
 
     let rowTotal = 6;
-    let rowCount = 8;
+    let rowCount = 18;
 
 
 
@@ -23,11 +23,11 @@ function LandingBanner() {
 
             // colorList.forEach((bc: string) => {
             let bc = 'black'
-            let randmNum = Math.floor(Math.random() * 3)
-            
-            if(randmNum){
+            let randmNum = Math.floor(Math.random() * 2)
+
+            if (randmNum) {
                 list.push(<Bubble color={'purple'} key={"Key: row-" + row + "BB-" + bb + "Color-" + bc} />)
-            }else{
+            } else {
                 list.push(<Bubble color={'gray'} key={"Key: row-" + row + "BB-" + bb + "Color-" + bc} />)
             }
 
