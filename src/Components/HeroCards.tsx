@@ -91,7 +91,7 @@ function HeroCards(props: any) {
         getTodayExp()
         return (
             personTasks.map((task: any) => (
-                <button className='buttonClear text-center  cursor-pointer' key={task.taskId}
+                <button className='buttonClear text-center  cursor-pointer hover:scale-105 ' key={task.taskId}
                     onClick={() => { openCardModal(task)}}
                 >
                     <Card

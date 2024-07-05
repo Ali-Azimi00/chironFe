@@ -24,7 +24,7 @@ function Card(props: any) {
         <React.Fragment>
             <div onClick={() => {setAniTog(!aniTog)}}
                 className={'transition ease-linear transform  hover:animate-pulse '+
-                            'hover:scale-110 duration-500 inline '+
+                            'duration-500 inline '+
                             'xl:min-w-full '}
                 // style={{ backdropFilter: "blur(20px)"}}
             >
