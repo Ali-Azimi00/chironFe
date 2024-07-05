@@ -1,6 +1,5 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState} from 'react';
 import '../App.css'
-import axios from 'axios';
 
 
 function HeroBanner() {
@@ -11,8 +10,7 @@ function HeroBanner() {
         { title: "Spirit", percent: 85, color: 'blue' },
 
     ]);
-    const [progCount, setProgCount]=useState(0);
-    const [progress, setProgress] = useState(0);
+
 
 
     // useEffect(()=>{

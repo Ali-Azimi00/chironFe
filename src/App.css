@@ -13,14 +13,17 @@
 }
 
 .fade-img {
-  height: 25rem;
+  height: 20rem;
   width: 100%;
   background-color: rgb(36, 36, 36); /* Used if the image is unavailable */
 
   background-image: linear-gradient(transparent, rgb(36, 36, 36) 90%), url(https://t3.ftcdn.net/jpg/02/68/48/86/240_F_268488616_wcoB2JnGbOD2u3bpn2GPmu0KJQ4Ah66T.jpg);
-  background-position: center; /* Center the image */
+  /* background-position:; */
+  /* background-image: linear-gradient(transparent, rgb(36, 36, 36) 90%), url(https://www.creativefabrica.com/wp-content/uploads/2022/03/07/Purple-network-texture-background-Graphics-26644190-1.jpg); */
+  background-position:top; /* Center the image */
   background-size: cover; /* Resize the background image to cover the entire container */
-
+  background-size: 90;
+  background-repeat: no-repeat;
   image-rendering:optimizeQuality;
 }
 
@@ -60,8 +63,9 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 2px grey; 
-  border-radius: 10px;
+  /* box-shadow: inset 0 0 2px grey;  */
+  background-color: transparent;
+  /* border-radius: 10px; */
 
   /* border-bottom-color: var(--purps);
   border-bottom-width: 5px; */
@@ -72,12 +76,13 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--bgGray);
-  border-radius: 10px; 
+  /* border-radius: 10px;  */
   border-style:solid;
   /* border-width: 6px; */
-  border-color:var(--purps);
+  border-color: var(--purps);
+  /* box-shadow: inset 0 0 3px var(--purps);  */
 
-  max-height:12px;
+  /* max-height:12px; */
 
 }
 
