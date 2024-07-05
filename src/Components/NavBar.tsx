@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import '../App.css'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from './../assets/AAwhite-trans.png'
-import axios from 'axios';
-import Modal from '../components/Modal'
 
 
 
@@ -22,36 +20,6 @@ const navigation = [
 
 function NavBar() {
 
-    const [progCount, setProgCount]=useState(0);
-    const [progress, setProgress] = useState(0);
-    // const [completedCount, setCompletedCount] = useState(0);
-
-    console.log()
-
-    useEffect(()=>{
-        getTodayExp()
-        setProgress((progCount/12)*100);
-    },[progCount])
-
-    const getTodayExp = async () => {
-        const response = await axios.get(
-            `http://localhost:8080/exp/person/1/Today`
-        )
-
-        let totalCount = 0;
-
-        response.data.forEach((element: any) => {
-            let max = element.task.taskMinCount;
-            let count = element.expCount;
-
-            count / max == 1 ? totalCount++ : null;
-
-            console.log(totalCount)
-
-        });
-
-        setProgCount(totalCount);
-    }
 
 
 
@@ -219,12 +187,6 @@ function NavBar() {
                     </>
                 )}
             </Disclosure>
-
-
-            <div className='w-full bg-gray-200  h-3 dark:bg-gray-700 mb-0' onClick={() => { getTodayExp() }}>
-                <div className={`transition-all ease-out duration-1000 h-full bg-purple-600 h-3 rounded-r-3xl`} style={{ width: progress.toString() + "%" }}></div>
-            </div>
-
         </React.Fragment>
     )
 

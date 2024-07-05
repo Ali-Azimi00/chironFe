@@ -1,0 +1,233 @@
+.taskCard {
+    box-shadow: inset 0px 1px 20px 0 rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(1px);
+
+    min-width: 10rem;
+    min-height: 10rem;
+
+    max-width: 10rem;
+    max-height: 15rem;
+}
+.taskCard:hover{
+    transform: scale(1.05);
+}
+.fiftyWidth{
+    width:100%;
+}
+
+.taskCardImg{
+    min-width:4rem;
+    max-width:40%;
+}
+
+.cardFadeOut {
+    opacity: 100%;
+    animation: 2s myFadeOut ease-in .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes myFadeOut {
+    from {
+        opacity: 100%
+    }
+    to {
+        opacity: 0%
+    }
+}
+
+.cardFadeIn {
+    opacity: 0%;
+    animation: 2.7s myFadeIn ease-in 2.4s;
+    animation-fill-mode: forwards;
+}
+@keyframes myFadeIn {
+    from {
+        opacity: 0%
+    }
+
+    to {
+        opacity: 100%
+    }
+}
+
+.bubble {
+    box-shadow: inset 0px -30px 40px 0 rgba(3, 3, 3, 0.69);
+    /* min-width: 115px;
+    min-height: 115px; */
+    /* min-width: 15vh;
+    min-height: 15vh; */
+    min-width: 6rem;
+    min-height: 6rem;
+    /* min-width: 4rem;
+    min-height: 4rem; */
+    display: inline-block;
+
+}
+
+.bubbleContainer {
+    position: fixed;
+    box-shadow: 0px -10px 10px 0px rgba(255, 255, 255, .1), 0px 10px 10px 0 rgba(255, 255, 255, .1);
+    /* border-top: 10px solid rgb(5, 5, 5); */
+    height: 85%;
+}
+
+.bubbleRow {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.modal{
+    box-shadow: 0px 1px 20px 0 rgb(255, 255, 255);
+}
+
+.modalText{
+    font-family: 'Courier New', Courier, monospace;
+    /* text-shadow: white;
+    text-indent: 50px;
+    color: primary; */
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-color: var(--purps)
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+   appearance: none;
+   margin-top: -6px; /* Centers thumb on the track */
+
+   border-radius: 100%;
+   /*custom styles*/
+   background-color: #ffffff;
+   height: 1rem;
+   width: 1rem;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    border: none; /*Removes extra border that FF applies*/
+    border-radius: 0rem; /*Removes default border-radius that FF applies*/
+    background-color: var(--purps);
+    border-radius: 100px;
+    height: .25rem;
+
+
+}
+
+.rowAnimate {
+    animation: slider 5s forwards infinite
+}
+
+@keyframes slider {
+    from {
+        left: 0%
+    }
+
+    to {
+        left: 100%
+    }
+}
+
+
+.taskTable{
+    max-height: 55vh;
+
+    overflow-y: scroll;
+    /* border-style: dashed;
+    border-width: 2px;
+    border-color:var(--purps) */
+    /* scrollbar-color: purple;
+    scrollbar-width: thin;  */
+
+}
+
+
+.toggle{
+    box-shadow: inset 0px 1px 8px 0 rgb(255, 255, 255);
+}
+.toggleBar{
+    box-shadow: inset 0px 1px 8px 0 rgb(255, 255, 255);
+}
+
+
+
+
+
+.welcome {
+    position: absolute;
+    margin: auto;
+    /* margin-top: 10vh; */
+    margin-left: 25%;
+    width: screen;
+    /* border: 3px solid green; */
+    /* padding-top: -100rem; */
+    text-align: center;
+    z-index: 5;
+    opacity: 65%;
+    font-family: fantasy;
+    font-size: 20vw;
+
+    text-shadow: black 0px 0 150px;
+}
+
+.welcome:hover {
+    animation: strobe .45s ease-in 0s infinite both running;
+    
+    text-shadow: #FC0 0px 0px 200px;
+}
+
+@keyframes strobe {
+
+    0% {
+        text-shadow: #FC0 0px 0px 30px
+    }
+
+    25% {
+        text-shadow: white 0px -50px 30px
+    }
+
+    50% {
+        text-shadow: #FC0 0px -100px 30px
+    }
+
+    75% {
+        text-shadow: white 0px -150px 30px
+    }
+
+    100% {
+        text-shadow: #FC0 0px -500px 30px
+    }
+
+}
+
+
+.taskBanner{
+    position: relative;
+    padding: 1%;
+    height: 100%;
+    width: screen;
+    
+    /* background-color: gray; */
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+/* @media screen and (min-width: 600px) {
+    .welcome {
+        color: blue;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .welcome {
+        color: red;
+    }
+} */

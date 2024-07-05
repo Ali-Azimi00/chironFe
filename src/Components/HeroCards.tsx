@@ -1,28 +1,77 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect,  useState } from 'react';
 import Card from '../components/Card';
 import { tasks } from "../constants";
 import './component.css'
 import axios from 'axios';
 import Modal from './Modal';
+// import { redirect } from 'react-router-dom';
 
+type Task = {
+    taskId: number;
+    taskMinCount: number;
+    taskName: string;
+    taskUnit: string;
+    taskCategory: any;
+}
 
-function HeroCards() {
+type XP = {
+    expId: number;
+    expCount: number;
+    date: string;
+    task: Task;
+}
 
-    const [personTasks, setPersonTasks] = useState([]);
+function HeroCards(props: any) {
+
+    const [personTasks, setPersonTasks] = useState<Task[]>([]);
     const [openModal, setOpenModal] = useState(false);
-
-    const [selectedTask, setSelectedTask] = useState([]);
-    const [currentCount, setCurrentCount] = useState(0)
+    const [selectedTask, setSelectedTask] = useState<Task>();
+    const [currentCount, setCurrentCount] = useState(0);
+    const [xpList, setXpList] = useState<XP[]>([]);
 
 
     useEffect(() => {
         getPersonTasks()
-    }, [])
+    }, []) 
 
     const getTaskIcon = (taskName: string) => {
         let list: any = []
-        tasks.filter((t) => t.name.toLowerCase() == taskName.toLowerCase() ? list.push(t.icon) : null);
+        tasks.filter((t) =>
+            t.name.toLowerCase() == taskName.toLowerCase() ?
+                list.push(t.icon) : null);
         return list[0];
+    }
+
+
+    const getTodayExp = async () => {
+        const response = await axios.get(
+            `http://localhost:8080/exp/person/1/Today`
+        )
+        let todayExp = response.data
+        setXpList(todayExp)
+        props.setXpList(todayExp)
+    }
+
+    const getSelectedXp = (taskId: number) => {
+        let currentXp: XP[] = xpList.filter((xp: XP) => {
+            return xp.task.taskId === taskId ?
+                xp : null
+        })
+        if (currentXp.length != 0) {
+            setCurrentCount(currentXp[0].expCount)
+            return currentXp[0].expCount;
+        }
+        else {
+            setCurrentCount(0)
+            return 0
+        }
+    }
+
+
+    const openCardModal = (task: Task) => {
+        getSelectedXp(task.taskId)
+        setSelectedTask(task);
+        setOpenModal(true)
     }
 
     const getPersonTasks = async () => {
@@ -34,22 +83,16 @@ function HeroCards() {
                     // 'Content-Type': 'application/json',
                 },
             });
-        setPersonTasks(response.data)
+        let taskList: Task[] = response.data;
+        setPersonTasks(taskList)
     }
-
-
-    const openCardModal = (task: any) => {
-        setSelectedTask(task);
-        getTodayExp(task.taskId)
-        setOpenModal(true)
-    }
-
 
     const loadPersonTasks = () => {
+        getTodayExp()
         return (
             personTasks.map((task: any) => (
-                <div className='text-center cursor-pointer' key={task.taskId}
-                    onClick={() => { openCardModal(task) }}
+                <button className='buttonClear text-center  cursor-pointer' key={task.taskId}
+                    onClick={() => { openCardModal(task)}}
                 >
                     <Card
                         cssProp={''}
@@ -57,34 +100,18 @@ function HeroCards() {
                         taskName={task.taskName}
                         icon={getTaskIcon(task.taskName)}>
                     </Card>
-                </div>
-            ))
+                </button>
+            )
+            )
         )
     }
-
-    const getTodayExp = async (tId: Int16Array) => {
-        const response = await axios.get(
-            `http://localhost:8080/exp/person/1/Today`
-        )
-
-        let todayExp = response.data
-        let count = todayExp.filter((xp: any) => xp.task.taskId === tId)
-
-        if (count.length) {
-            setCurrentCount(count[0].expCount)
-        }
-        else {
-            setCurrentCount(0)
-        }
-    }
-
 
     return (
-        <React.Fragment>
+        <React.Fragment>        
             <div className='mx-auto flex'
                 style={{ justifyContent: "center" }}
             >
-                <div onClick={() => { }}
+                <div
                     className={
                         ' grid ' +
                         'xxsm:grid-cols-1 ' +
@@ -108,7 +135,6 @@ function HeroCards() {
                 <Modal setOpenModal={setOpenModal}
                     selectedTask={selectedTask}
                     currentCount={currentCount}
-
                 />
 
             </div>

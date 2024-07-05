@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import '../App.css'
+import axios from 'axios';
 
 
 function HeroBanner() {
@@ -10,29 +11,54 @@ function HeroBanner() {
         { title: "Spirit", percent: 85, color: 'blue' },
 
     ]);
+    const [progCount, setProgCount]=useState(0);
+    const [progress, setProgress] = useState(0);
 
 
-    const [progress,setProgress] = useState(45);
+    // useEffect(()=>{
+    //     getTodayExp()
+    //     setProgress((progCount/12)*100);
+    // },[progCount])
 
-       function loadStatTitle() {
-        return (
-            stats.map((stat) => (
-                <div key={stat.title} >
-                    {stat.title}
-                </div>
-            ))
-        )
-    }
+    // const getTodayExp = async () => {
+    //     const response = await axios.get(
+    //         `http://localhost:8080/exp/person/1/Today`
+    //     )
 
-    function loadStatBar() {
-        return (
-            stats.map((stat) => (
-                <div key={stat.color} className='w-full bg-gray-200 rounded-full h-3 dark:bg-gray-700 mb-3'>
-                    <div className={`transition-all ease-out duration-1000 h-full bg-${stat.color}-600 h-3 rounded-full`} style={{ width: stat.percent.toString() + "%" }}></div>
-                </div>
-            ))
-        )
-    }
+    //     let totalCount = 0;
+
+    //     response.data.forEach((element: any) => {
+    //         let max = element.task.taskMinCount;
+    //         let count = element.expCount;
+
+    //         count / max == 1 ? totalCount++ : null;
+
+    //     });
+
+    //     setProgCount(totalCount);
+    // }
+
+
+
+    //    function loadStatTitle() {
+    //     return (
+    //         stats.map((stat) => (
+    //             <div key={stat.title} >
+    //                 {stat.title}
+    //             </div>
+    //         ))
+    //     )
+    // }
+
+    // function loadStatBar() {
+    //     return (
+    //         stats.map((stat) => (
+    //             <div key={stat.color} className='w-full bg-gray-200 rounded-full h-3 dark:bg-gray-700 mb-3'>
+    //                 <div className={`transition-all ease-out duration-1000 h-full bg-${stat.color}-600 h-3 rounded-full`} style={{ width: stat.percent.toString() + "%" }}></div>
+    //             </div>
+    //         ))
+    //     )
+    // }
 
 
     // function loadPercentage() {
@@ -68,8 +94,8 @@ function HeroBanner() {
 
             <div className='-mb-48 '>
                 <div className='fade-img '>
-                    {/* <div className='w-full bg-gray-200 rounded-full h-3 dark:bg-gray-700 mb-3'>
-                        <div className={`transition-all ease-out duration-1000 h-full bg-purple-600 h-3 rounded-full`} style={{ width: progress.toString() + "%" }}></div>
+                    {/* <div className='w-full bg-gray-200 rounded-full h-3 dark:bg-gray-700 mb-3 cursor-pointer'>
+                        <div className={`cursor-pointer transition-all ease-out duration-1000 h-full bg-purple-600 h-3 rounded-r-3xl`} style={{ width: progress.toString() + "%" }}></div>
                     </div> */}
                     {/* <div className='statBox pt-8'>
                         <div className='border p-4  w-1/2  xsm:w-full   rounded-2xl shadow-2xl flex'>
