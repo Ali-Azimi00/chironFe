@@ -11,9 +11,7 @@ function TaskSelect() {
     const [currentCat, setCurrentCat] = useState('mind');
     const [taskListSize, setTaskListSize] = useState(6);
 
-
     const [personTasks, setPersonTasks] = useState([]);
-
 
     const togglePosition = {
         'mind': 'left-0',
@@ -44,7 +42,8 @@ function TaskSelect() {
                     // Authorization: `Bearer ${accessToken}`,
                     // 'Content-Type': 'application/json',
                 },
-            });
+            }
+        );
         setPersonTasks(response.data)
     }
 
@@ -52,7 +51,6 @@ function TaskSelect() {
         getTasks(currentCat);
         getPersonTasks();
     }, [currentCat, taskListSize])
-
 
 
     const switchToggle = (selection: String) => {
@@ -77,15 +75,13 @@ function TaskSelect() {
         getTasks(currentCat)
     }
 
-
-
     return (
         <React.Fragment>
-            <div className='xl:flex ' style={{ justifyContent: "space-evenly" }}>
-                <div className=' '>
+            <div className='' style={{ justifyContent: "space-evenly" }}>
+                <div className=''>
 
                     <div>
-                        <TaskBanner personTaskList={personTasks}></TaskBanner>
+                        <TaskBanner personTaskList={personTasks} ></TaskBanner>
                     </div>
 
                 </div>
@@ -116,8 +112,7 @@ function TaskSelect() {
                             </div>
                         </div>
 
-
-                        <div className='mt-4 max-h-2'>
+                        <div className='mt-4  mb-12'>
                             <TaskTable taskSizer={setTaskListSize} tList={taskList} currentCat={currentCat}></TaskTable>
                         </div>
                     </div>

@@ -11,8 +11,6 @@ function HeroBanner() {
 
     ]);
 
-
-
     // useEffect(()=>{
     //     getTodayExp()
     //     setProgress((progCount/12)*100);

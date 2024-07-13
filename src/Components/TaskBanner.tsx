@@ -1,20 +1,58 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { tasks } from '../constants';
 import Card from './Card';
 
 function TaskBanner(props: any) {
 
+    const [tasksData, setTasksData] = useState(props.personTaskList);
+    const [currentPg, setCurrentPg] = useState<number>(1);
+    const [postsPerPg] = useState<number>(4);
+    const [lastPg, setLastPg] = useState(3)
+
+
+    function pageTotal() {
+        setTasksData(props.personTaskList)
+
+        if (tasksData.length > 8) {
+            setLastPg(3)
+            console.log("data > 8")
+            console.log(lastPg)
+
+        }
+        else if (tasksData.length > 4) {
+            setLastPg(2)
+            console.log("data > 4")
+
+        }
+        else {
+            setLastPg(1)
+        }
+    }
+
+    useEffect(() => {
+        pageTotal()
+    }, [])
+
+
+    useEffect(() => {
+        pageTotal()
+    }, [props])
 
 
     const getTaskIcon = (taskName: string) => {
         let list: any = []
-        tasks.filter((t) => t.name.toLowerCase() == taskName.toLowerCase() ? list.push(t.icon) : null);
+        tasks.filter((t: any) => t.name.toLowerCase() == taskName.toLowerCase() ? list.push(t.icon) : null);
         return list[0];
     }
 
+    const lastPostIndex = currentPg * postsPerPg;
+    const firstPostIndex = lastPostIndex - postsPerPg;
+    const currentPosts = tasksData.slice(firstPostIndex, lastPostIndex)
+
+
     const loadPersonTasks = () => {
         return (
-            props.personTaskList.map((task: any) => (
+            currentPosts.map((task: any) => (
                 <div className='text-center' key={task.taskId}>
                     <Card
                         cssProp={''}
@@ -27,21 +65,57 @@ function TaskBanner(props: any) {
         )
     }
 
+    const changeChevrons = (page: string) => {
+        switch (page) {
+            case "first": { return currentPg === 1 ? "transparent" : "currentColor" }
+            case "last": { return currentPg === lastPg ? "transparent" : "currentColor" }
+
+        }
+    }
+
 
     return (
         <React.Fragment>
+
             <div className='taskBanner bg-transparent mt-16 justify-center'>
+
+                {/* <button onClick={() => { currentPg > 1 ? setCurrentPg(currentPg - 1) : null }}
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill={changeChevrons("first")} className="size-4">
+                        <path fillRule="evenodd" d="M9.78 4.22a.75.75 0 0 1 0 1.06L7.06 8l2.72 2.72a.75.75 0 1 1-1.06 1.06L5.47 8.53a.75.75 0 0 1 0-1.06l3.25-3.25a.75.75 0 0 1 1.06 0Z" clipRule="evenodd" />
+                    </svg>
+                </button> */}
+                <button onClick={() => { currentPg > 1 ? setCurrentPg(currentPg - 1) : null }}
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill={changeChevrons("first")} className="size-4">
+                        <path fillRule="evenodd" d="M9.78 4.22a.75.75 0 0 1 0 1.06L7.06 8l2.72 2.72a.75.75 0 1 1-1.06 1.06L5.47 8.53a.75.75 0 0 1 0-1.06l3.25-3.25a.75.75 0 0 1 1.06 0Z" clipRule="evenodd" />
+                    </svg>
+                </button>
+
                 <div className={'grid ' +
                     'xsm:grid-cols-2 ' +
-                    'sm:grid-cols-3 ' +
-                    'md:grid-cols-3 ' +
+                    'sm:grid-cols-2 ' +
+                    'md:grid-cols-4 ' +
                     'lg:grid-cols-4 ' +
                     'xl:grid-cols-4 ' +
                     '2xl:grid-cols-5 ' +
-
                     'gap-6'}>
                     {loadPersonTasks()}
                 </div>
+
+                {/* <button onClick={() => { currentPg < lastPg ? setCurrentPg(currentPg + 1) : null }}
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill={changeChevrons("last")} className="size-4">
+                        <path fillRule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
+                    </svg>
+                </button> */}
+                <button onClick={() => { currentPg < lastPg ? setCurrentPg(currentPg + 1) : null }}
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill={changeChevrons("last")} className="size-4">
+                        <path fillRule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
+                    </svg>
+                </button>
+
             </div>
         </React.Fragment>
     )
