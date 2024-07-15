@@ -79,7 +79,7 @@ function TaskSelect() {
         <React.Fragment>
             <div className='' style={{ justifyContent: "space-evenly" }}>
                 <div className=''>
-
+               
                     <div>
                         <TaskBanner personTaskList={personTasks} ></TaskBanner>
                     </div>
@@ -91,7 +91,7 @@ function TaskSelect() {
                             <div className="shadow rounded-full h-10 mt-4 flex py-1 px-0 relative items-center toggleBar bg-purple-800">
                                 <div onClick={() => { switchToggle('mind') }}
                                     className="w-full flex justify-center rounded-full cursor-pointer">
-                                    <p>mind</p>
+                                    <p>mental</p>
                                 </div>
                                 <div onClick={() => { switchToggle('physical') }}
                                     className="w-full flex justify-center rounded-full cursor-pointer ">

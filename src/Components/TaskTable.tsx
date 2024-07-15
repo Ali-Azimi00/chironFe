@@ -20,6 +20,7 @@ function TaskTable(props: any) {
             `http://localhost:8080/person/1/task_remove/${taskId}`
         )
         props.taskSizer( 100+ taskId)
+        return response.status
     }
 
 
