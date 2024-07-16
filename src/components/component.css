@@ -1,22 +1,31 @@
-.taskCard {
-    box-shadow: inset 0px 1px 20px 0 rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(1px);
 
-    min-width: 10rem;
-    min-height: 10rem;
 
-    max-width: 10rem;
-    max-height: 15rem;
+.bubble {
+    box-shadow: inset 0px -30px 40px 0 rgba(3, 3, 3, 0.69);
+    /* min-width: 115px;
+    min-height: 115px; */
+    /* min-width: 15vh;
+    min-height: 15vh; */
+    min-width: 6rem;
+    min-height: 6rem;
+    /* min-width: 4rem;
+    min-height: 4rem; */
+    display: inline-block;
+
 }
 
-.fiftyWidth{
-    width:100%;
+.bubbleContainer {
+    position: fixed;
+    box-shadow: 0px -10px 10px 0px rgba(255, 255, 255, .1), 0px 10px 10px 0 rgba(255, 255, 255, .1);
+    /* border-top: 10px solid rgb(5, 5, 5); */
+    height: 85%;
 }
 
-.taskCardImg{
-    min-width:4rem;
-    max-width:40%;
+.bubbleRow {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    justify-content: space-around;
 }
 
 .cardFadeOut {
@@ -48,33 +57,21 @@
         opacity: 100%
     }
 }
+.currentTasks {
+    position: relative;
+    padding: 0%;
+    height: 100%;
+    /* width: screen; */
 
-.bubble {
-    box-shadow: inset 0px -30px 40px 0 rgba(3, 3, 3, 0.69);
-    /* min-width: 115px;
-    min-height: 115px; */
-    /* min-width: 15vh;
-    min-height: 15vh; */
-    min-width: 6rem;
-    min-height: 6rem;
-    /* min-width: 4rem;
-    min-height: 4rem; */
-    display: inline-block;
+    /* background-color: gray; */
 
-}
-
-.bubbleContainer {
-    position: fixed;
-    box-shadow: 0px -10px 10px 0px rgba(255, 255, 255, .1), 0px 10px 10px 0 rgba(255, 255, 255, .1);
-    /* border-top: 10px solid rgb(5, 5, 5); */
-    height: 85%;
-}
-
-.bubbleRow {
     display: flex;
-    margin: auto;
-    text-align: center;
-    justify-content: space-around;
+    /* justify-content: space-evenly; */
+    justify-items: center;
+}
+
+.fiftyWidth{
+    width:100%;
 }
 
 .modal{
@@ -117,6 +114,16 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 }
 
+.progressBar{
+    box-shadow: inset -2px -4px 3px 0 rgba(4, 4, 4, 0.5);
+}
+
+.progressGroove{
+    box-shadow: inset 0px -3px 3px 0 rgba(248, 246, 246, 0.1);
+}
+
+
+
 .rowAnimate {
     animation: slider 5s forwards infinite
 }
@@ -129,6 +136,25 @@ input[type="range"]::-webkit-slider-runnable-track {
     to {
         left: 100%
     }
+}
+
+.taskCard {
+    box-shadow: inset 0px 1px 20px 0 rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(1px);
+
+    min-width: 10rem;
+    min-height: 10rem;
+
+    max-width: 10rem;
+    max-height: 15rem;
+}
+
+
+
+.taskCardImg{
+    min-width:4rem;
+    max-width:40%;
 }
 
 
@@ -151,9 +177,6 @@ input[type="range"]::-webkit-slider-runnable-track {
 .toggleBar{
     box-shadow: inset 0px 1px 8px 0 rgb(255, 255, 255);
 }
-
-
-
 
 
 .welcome {
@@ -203,18 +226,6 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 }
 
-.currentTasks {
-    position: relative;
-    padding: 0%;
-    height: 100%;
-    /* width: screen; */
-
-    /* background-color: gray; */
-
-    display: flex;
-    /* justify-content: space-evenly; */
-    justify-items: center;
-}
 
 
 .taskBanner {

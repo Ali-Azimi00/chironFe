@@ -45,11 +45,11 @@ function Hero() {
     const loadProgBar = () => {
 
         return (
-            <div className='w-full bg-gray-200  h-3 dark:bg-gray-700 mb-0 cursor-pointer'>
+            <div className='progressGroove w-full bg-gray-200  h-4 dark:bg-gray-700 mb-0 cursor-pointer'>
                 {/* <div className={`cursor-pointer transition-all ease-out duration-1000 
                                 h-full bg-purple-600 h-3 rounded-r-3xl`} */}
-                <div className={`cursor-pointer transition-all ease-out duration-1000 
-                                h-full bg-purple-600 h-3 rounded-r-3xl`}
+                <div className={` cursor-pointer transition-all ease-out duration-1000 
+                                h-full bg-purple-600 h-3 rounded-r-3xl progressBar`}
                     style={{ width: progress.toString() + "%" }}
                 >
                 </div>
