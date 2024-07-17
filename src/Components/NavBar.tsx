@@ -93,7 +93,7 @@ function NavBar() {
                                     >
                                         <span className="absolute -inset-1.5" />
                                         <span className="sr-only">View notifications</span>
-
+                                                                   
                                         {/* <BellIcon className="h-6 w-6" aria-hidden="true" /> */}
 
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" className="size-6">

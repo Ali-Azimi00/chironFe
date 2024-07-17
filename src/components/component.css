@@ -167,7 +167,15 @@ input[type="range"]::-webkit-slider-runnable-track {
     border-color:var(--purps) */
     /* scrollbar-color: purple;
     scrollbar-width: thin;  */
+}
 
+.taskTable button:hover{
+    border-color: var(--purps);
+}
+
+.taskTable button:active{
+    border-color: white;
+    background-color: var(--purps);
 }
 
 
