@@ -3,24 +3,7 @@ import './component.css'
 
 function Bubble(props: any) {
 
-    // const color = props.color;
-    // console.log("color: " + color)
-    // const [randNum, setRandNum] = useState(100);
-
     let color = props.color;
-
-    // if (randNum > .5) {
-    //     color = props.color;
-    // }
-
-    // useEffect(() => {
-    //     const interval =setInterval(() => {
-    //         setRandNum(Math.random())
-    //     }, 500)
-    //     return () => clearInterval(interval);
-
-    // }, [])
-
 
     return (
         <React.Fragment>
