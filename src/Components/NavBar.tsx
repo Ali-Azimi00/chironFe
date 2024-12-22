@@ -25,7 +25,7 @@ function NavBar() {
 
     return (
         <React.Fragment>
-            <Disclosure as="nav" className="" style={{backgroundColor:'rgba(107, 33, 168, .95)'}}>
+            <Disclosure as="nav" className="navbar pb-2" style={{backgroundColor:'#242424'}}>
                 {({ open }) => (
                     <>
                         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

@@ -8,42 +8,54 @@
     width: 500px;
 
     margin-top: 5%;
-    
+
 }
 
+
 .tinybox {
-    display:flex;
-    justify-items:center;
-    color:transparent;
+    display: flex;
+    justify-items: center;
+    color: transparent;
     /* color:white; */
 
     position: relative;
-  
+
     height: 40px;
     width: 40px;
     border: solid 2px;
-    border-color: rgb(36, 36, 36); 
+    border-color: rgb(36, 36, 36);
 
-    background-color: var(--bgGray) ;
-    box-shadow: inset -.5px -.5px 2px white ;
-    
+    background-color: var(--bgGray);
+    box-shadow: inset -.5px -.5px 2px white;
+
 }
 
-.tinybox:hover{
+.tinybox:hover {
     scale: 1.03;
     cursor: pointer;
 }
 
-.tinyboxColor{
+.tinyboxColor {
     background-color: var(--purps);
 }
 
-.radarContainer{
-    width: 50%;
-    color:white;
+.radarContainer {
+    justify-self: left;
+    width: 90%;
+
 }
 
-.polarContainer{
-    width: 50%;
-    color:white;
+.polarContainer {
+    justify-self: right;
+    width: 80%;
+
 }
+
+.graphsContainer {
+    justify-self: center;
+    max-width: 500px;
+}
+
+
+
+

@@ -50,11 +50,13 @@
 }
 
 .navbar {
-  background-color: blue;
+  /* background-color: blue;
   width: 100%;
   min-height: 2rem;
   position: fixed;
-  z-index: 2;
+  z-index: 2; */
+  box-shadow: inset -2px -4px 3px 0 rgba(4, 4, 4, 0.5);
+
 }
 
 
