@@ -27,22 +27,23 @@
   image-rendering:optimizeQuality;
 }
 
-.statBox{
+/* .statBox{
   max-width: 1280px;
   padding: 0 2rem;
   margin:  auto;
 
-  /* text-align: left; */
-}
+  text-align: left;
+} */
 
 .statBar{
   /* background-position: center; 
   background-size: cover;  */
   color: red;
 }
+
 .cardContainer {
   max-width: 1280px;
-  padding: 0 2rem;
+  padding: 0 0rem;
   margin: 0 auto;
   text-align: center;
 

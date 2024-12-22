@@ -50,6 +50,6 @@ CLI:
 ## Other Libraries
 > npm install @headlessui/react
 > npm install @heroicons/react
-
+> npm install chart.js react-chartjs-2
 Flaticon.com
 

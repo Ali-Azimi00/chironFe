@@ -229,3 +229,370 @@ input[type="range"]::-webkit-slider-runnable-track {
         color: red;
     }
 } */
+
+
+
+.bubble {
+    box-shadow: inset 0px -30px 40px 0 rgba(3, 3, 3, 0.69);
+    /* min-width: 115px;
+    min-height: 115px; */
+    /* min-width: 15vh;
+    min-height: 15vh; */
+    min-width: 6rem;
+    min-height: 6rem;
+    /* min-width: 4rem;
+    min-height: 4rem; */
+    display: inline-block;
+
+}
+
+.bubbleContainer {
+    position: fixed;
+    box-shadow: 0px -10px 10px 0px rgba(255, 255, 255, .1), 0px 10px 10px 0 rgba(255, 255, 255, .1);
+    /* border-top: 10px solid rgb(5, 5, 5); */
+    height: 85%;
+}
+
+.bubbleRow {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.cardFadeOut {
+    opacity: 100%;
+    animation: 2s myFadeOut ease-in .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes myFadeOut {
+    from {
+        opacity: 100%
+    }
+    to {
+        opacity: 0%
+    }
+}
+
+.cardFadeIn {
+    opacity: 0%;
+    animation: 2.7s myFadeIn ease-in 2.4s;
+    animation-fill-mode: forwards;
+}
+@keyframes myFadeIn {
+    from {
+        opacity: 0%
+    }
+
+    to {
+        opacity: 100%
+    }
+}
+
+.catBubble{
+    border:solid;
+    border-color: red;
+    border-width: 1px;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+
+    /* background-color: var(--bgGray); */
+    backdrop-filter: blur(3px);
+}
+
+.currentTasks {
+    position: relative;
+    padding: 0%;
+    height: 100%;
+    /* width: screen; */
+
+    /* background-color: gray; */
+
+    display: flex;
+    /* justify-content: space-evenly; */
+    justify-items: center;
+}
+
+.fiftyWidth{
+    width:100%;
+}
+
+.modal{
+    box-shadow: 0px 1px 20px 0 rgb(255, 255, 255);
+}
+
+.modalText{
+    font-family: 'Courier New', Courier, monospace;
+    /* text-shadow: white;
+    text-indent: 50px;
+    color: primary; */
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-color: var(--purps)
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+   appearance: none;
+   margin-top: -6px; /* Centers thumb on the track */
+
+   border-radius: 100%;
+   /*custom styles*/
+   background-color: #ffffff;
+   height: 1rem;
+   width: 1rem;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    border: none; /*Removes extra border that FF applies*/
+    border-radius: 0rem; /*Removes default border-radius that FF applies*/
+    background-color: var(--purps);
+    border-radius: 100px;
+    height: .25rem;
+
+
+}
+
+.progressBar{
+    box-shadow: inset -2px -4px 3px 0 rgba(4, 4, 4, 0.5);
+}
+
+.progressGroove{
+    box-shadow: inset 0px -3px 3px 0 rgba(248, 246, 246, 0.1);
+    top:0;
+    position: sticky;
+    z-index: 2
+}
+
+
+
+.rowAnimate {
+    animation: slider 5s forwards infinite
+}
+
+@keyframes slider {
+    from {
+        left: 0%
+    }
+
+    to {
+        left: 100%
+    }
+}
+
+.taskCard {
+    box-shadow: inset 0px 1px 20px 0 rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(1px);
+
+    min-width: 10rem;
+    min-height: 10rem;
+
+    max-width: 10rem;
+    max-height: 15rem;
+}
+
+
+
+.taskCardImg{
+    min-width:4rem;
+    max-width:40%;
+}
+
+
+.taskTable{
+    max-height: 55vh;
+
+    overflow-y: scroll;
+    /* border-style: dashed;
+    border-width: 2px;
+    border-color:var(--purps) */
+    /* scrollbar-color: purple;
+    scrollbar-width: thin;  */
+}
+
+.taskTable button:hover{
+    border-color: var(--purps);
+}
+
+.taskTable button:active{
+    border-color: white;
+    background-color: var(--purps);
+}
+
+
+.toggle{
+    box-shadow: inset 0px 1px 8px 0 rgb(255, 255, 255);
+}
+.toggleBar{
+    box-shadow: inset 0px 1px 8px 0 rgb(255, 255, 255);
+}
+
+
+.welcome {
+    position: absolute;
+    text-align: center;
+    z-index: 5;
+    opacity: 65%;
+    font-family: fantasy;
+    font-size: 10rem;
+
+    text-shadow: black 0px 0 150px;
+
+    height: 14rem;
+    width: 25rem;
+}
+
+.welcome:hover {
+    animation: strobe .45s ease-in 0s infinite both running;
+    
+    text-shadow: #FC0 0px 0px 200px;
+}
+
+@keyframes strobe {
+
+    0% {
+        text-shadow: #FC0 0px 0px 30px
+    }
+
+    25% {
+        text-shadow: white 0px -50px 30px
+    }
+
+    50% {
+        text-shadow: #FC0 0px -100px 30px
+    }
+
+    75% {
+        text-shadow: white 0px -150px 30px
+    }
+
+    100% {
+        text-shadow: #FC0 0px -500px 30px
+    }
+
+}
+
+
+
+.taskBanner {
+    position: relative;
+    padding: 0%;
+    height: 100%;
+    width: screen;
+
+    /* background-color: gray; */
+
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+}
+
+.taskBanner h1{
+    font-size: 24px;
+    color: var(--bgGray);
+    /* background: -webkit-radial-gradient(var(--purps), rgb(250,250,250)); */
+    /* background: -webkit-linear-gradient(90deg,  rgb(250,250,250),var(--purps)); */
+    /* background: -webkit-drop( rgb(250,250,250),var(--purps));*/ 
+    text-shadow:  -1px -3px 20px rgb(255, 255, 255,.6); 
+
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+.taskBanner button {
+    background-color: transparent;
+    transform: scale(1.5);
+    color: var(--purps);
+    margin-top: 5%;
+    cursor:default;
+}
+
+.taskBanner svg:hover {
+    text-shadow: 0px 1px 20px 0 rgba(245, 245, 245, 0.3);
+    transform: scale(2);
+}
+
+
+@property --p{
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 1;
+  }
+  
+  .pie {
+    --p:66;
+    --b:6px;
+    /* --c:var(--purps); */
+    --c: rgb(250,250,250);
+    --w:104px;
+  
+    width: var(--w);
+    aspect-ratio: 1;
+    position: relative;
+    display: inline-grid;
+    margin: 5px;
+    place-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+  .pie:before,
+  .pie:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+  .pie:before {
+    inset: 0;
+    background:
+      radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
+      conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+            mask: radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+  }
+  .pie:after {
+    inset: calc(48% - var(--b)/2);
+    background: var(--c);
+    transform: rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+  }
+  .animatePie {
+    animation: p 1s .5s both;
+
+  }
+  .animatePie2 {
+    animation: p2 2s .5s both;
+
+  }
+
+  .no-round:before {
+    background-size: 0 0, auto;
+  }
+  .no-round:after {
+    content: none;
+  }
+  @keyframes p{
+    from{--p:0}
+    to{--p:100}
+  }
+  @keyframes p2 {
+    from {--p:100}
+  }
+
+
+/* @media screen and (min-width: 600px) {
+    .welcome {
+        color: blue;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .welcome {
+        color: red;
+    }
+} */

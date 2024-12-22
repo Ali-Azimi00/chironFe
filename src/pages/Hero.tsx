@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import HeroCards from '../components/HeroCards';
+// import HeroCards from '../components/HeroCards';
 import HeroBanner from '../components/HeroBanner';
 
 type Task = {
@@ -15,13 +15,23 @@ type XP = {
     date: string;
     task: Task;
 }
+type categories = {
+    mind: number;
+    physical: number;
+    spirit: number;
+}
+
 function Hero() {
 
     const [progress, setProgress] = useState(0);
     const [xpList, setXpList] = useState<XP[]>([]);
+    const [catProg, setCatProg] = useState<categories>({ mind: 0, physical: 0, spirit: 0 });
+
+
 
     useEffect(() => {
         updateProgress()
+        catProgCounter()
     }, [xpList])
 
 
@@ -35,10 +45,36 @@ function Hero() {
         let progressCounter = 0;
         xpList.forEach((xp: XP) => {
             if (xp.task.taskMinCount <= xp.expCount) {
+                // catProgCounter(xp.task.taskCategory[0].categoryType);
                 progressCounter++;
             }
         })
         return progressCounter
+    }
+
+    function catProgCounter() {
+
+        let mindCat = 0;
+        let physicalCat = 0;
+        let spiritCat = 0;
+
+        xpList.forEach((xp: XP) => {
+            if (xp.task.taskMinCount <= xp.expCount) {
+                // catProgCounter(xp.task.taskCategory[0].categoryType);
+                switch (xp.task.taskCategory[0].categoryType) {
+                    case "mind":
+                        mindCat++;
+                        break;
+                    case "physical":
+                        physicalCat++
+                        break;
+                    case "spirit":
+                        spiritCat++;
+                        break;
+                }
+            }
+        })
+        setCatProg({ mind: mindCat, physical: physicalCat, spirit: spiritCat })
     }
 
 
@@ -62,19 +98,19 @@ function Hero() {
 
             {loadProgBar()}
 
-            <div className='mt-0'>
+            <div className='mt-0 pb-12'>
 
-                <div className='mx-auto'>
+                <div className='mx-auto '>
                     <div>
-                        <HeroBanner></HeroBanner>
+                        <HeroBanner setXpList={setXpList} catProg={catProg}></HeroBanner>
                     </div>
                 </div>
-
+                {/* 
                 <div className='cardContainer'>
                     <div>
                         <HeroCards setXpList={setXpList}></HeroCards>
                     </div>
-                </div>
+                </div> */}
             </div>
 
         </React.Fragment >

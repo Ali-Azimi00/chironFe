@@ -1,19 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Bubble from './Bubble.tsx'
 import './../components/component.css'
 
 function LandingBanner() {
 
-    const [colorList] = useState(['purple', 'gray'])
+    // const [colorList] = useState(['purple', 'gray'])
     const rowSeparation = '-m-3';
-
 
     let rowTotal = 6;
     let rowCount = 18;
-
-
-
-
 
     const loadBubbles = (amt: number, row: string) => {
         var list: any = [];

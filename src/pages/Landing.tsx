@@ -13,9 +13,8 @@ function Landing() {
 
             <div className=' absolute'></div>
             <div className=' cursor-none 
-            content-center justify-content-center absolute z-50 inset-0  
-            m-auto w-full max-w-[600px] h-[3px]
-            xsm:text-9xl mt-[10%]
+            absolute z-50 inset-0 m-auto max-w-[600px]
+            xsm:text-9xl 
             welcome 
             '
                 onClick={() => { console.log('hello') }}>

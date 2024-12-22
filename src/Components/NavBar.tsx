@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from './../assets/AAwhite-trans.png'
 
 
@@ -25,7 +25,7 @@ function NavBar() {
 
     return (
         <React.Fragment>
-            <Disclosure as="nav" className="bg-gray-800 ">
+            <Disclosure as="nav" className="" style={{backgroundColor:'rgba(107, 33, 168, .95)'}}>
                 {({ open }) => (
                     <>
                         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -71,9 +71,9 @@ function NavBar() {
                                                     key={item.crumb}
                                                     href={item.href}
                                                     className={classNames(
-                                                        item.current ? 'bg-gray-900 text-white' :
+                                                        item.current ? 'bg-gray-500 text-white' :
                                                             'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                                        'rounded-md px-3 py-2 text-sm font-medium focus:ring-2'
+                                                        'rounded-md px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-white'
                                                     )}
                                                 // aria-current={item.current ? 'page' : undefined}
                                                 >
@@ -87,7 +87,7 @@ function NavBar() {
                                                 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                                     <button
                                         type="button"
-                                        className="relative rounded-full bg-gray-800 p-1 text-gray-400 
+                                        className="relative rounded-full bg-transparent p-1 text-gray-400 
                                         hover:text-white focus:outline-none focus:ring-2 focus:ring-white 
                                         focus:ring-offset-2 focus:ring-offset-gray-800"
                                     >
@@ -109,7 +109,7 @@ function NavBar() {
                                     {/* Profile dropdown */}
                                     <Menu as="div" className="relative ml-3">
                                         <div>
-                                            <Menu.Button className="relative flex rounded-full bg-gray-800 
+                                            <Menu.Button className="relative flex rounded-full bg-transparent
                                             text-sm focus:outline-none focus:ring-2 focus:ring-white 
                                             focus:ring-offset-2 focus:ring-offset-gray-800">
                                                 <span className="absolute -inset-1.5" />
