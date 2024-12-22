@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Bubble from './Bubble.tsx'
 import './../components/component.css'
 
@@ -18,9 +18,9 @@ function LandingBanner() {
 
             // colorList.forEach((bc: string) => {
             let bc = 'black'
-            let randmNum = Math.floor(Math.random() * 2)
+            let randmNum = Math.floor(Math.random() * 10)
 
-            if (randmNum) {
+            if (randmNum > 3.33) {
                 list.push(<Bubble color={'purple'} key={"Key: row-" + row + "BB-" + bb + "Color-" + bc} />)
             } else {
                 list.push(<Bubble color={'gray'} key={"Key: row-" + row + "BB-" + bb + "Color-" + bc} />)
