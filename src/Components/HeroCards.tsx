@@ -180,7 +180,7 @@ function HeroCards(props: any) {
 
     const loadCats = () => {
         return (
-            <div className='mt-4 mx-auto flex justify-center  space-x-7 xsm:hidden'>
+            <div className='mt-12 mx-auto flex justify-center  space-x-7 xsm:hidden'>
 
                 <div className={` pie ${loadAnimation}  h-[100px] w-[100px] flex p-6  `}
                     style={{ "--p": pieCounter('mind') }}>
@@ -206,7 +206,7 @@ function HeroCards(props: any) {
 
     return (
         <React.Fragment>
-            <div>
+            {/* <div>
                 mind: {props.catProg.mind}
             </div>
             <div>
@@ -214,7 +214,7 @@ function HeroCards(props: any) {
             </div>
             <div>
                 spirit: {props.catProg.spirit}
-            </div>
+            </div> */}
             {loadCats()}
             {/* <div className='mt-4 mx-auto flex justify-center  space-x-7 xsm:hidden'>
                 <div className=' pie animatePie h-[100px] w-[100px] flex p-6 transition-all ease-out duration-1000   '
@@ -237,7 +237,7 @@ function HeroCards(props: any) {
 
 
 
-            <div className='mx-auto flex mt-6'
+            <div className='mx-auto flex mt-12'
                 style={{ justifyContent: "center" }}
             >
 
