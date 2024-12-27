@@ -15,16 +15,16 @@ function TaskBanner(props: any) {
 
         if (tasksData.length > 8) {
             setLastPg(3)
-            console.log("data > 8")
-            console.log(lastPg)
+            // console.log("data > 8")
+            // console.log(lastPg)
         }
         else if (tasksData.length > 4) {
             setLastPg(2)
-            console.log("data > 4")
+            // console.log("data > 4")
         }
         else {
             setLastPg(1)
-            console.log("data <=4")
+            // console.log("data <=4")
         }
     }
 

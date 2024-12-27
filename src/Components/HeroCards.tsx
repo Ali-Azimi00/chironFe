@@ -20,6 +20,13 @@ type XP = {
     date: string;
     task: Task;
 }
+
+type Person = {
+    userId: number;
+    level: number;
+    name: string;
+    // stats:object;
+}
 // type categories = {
 //     mind: number;
 //     physical: number;
@@ -28,26 +35,40 @@ type XP = {
 
 function HeroCards(props: any) {
 
-    const [personTasks, setPersonTasks] = useState<Task[]>([]);
+    const [person, setPerson] = useState<Person>({
+        userId: 1,
+        level: 1,
+        name: "Olli"
+    }); const [personTasks, setPersonTasks] = useState<Task[]>([]);
     const [openModal, setOpenModal] = useState(false);
     const [selectedTask, setSelectedTask] = useState<Task>();
     const [currentCount, setCurrentCount] = useState(0);
     const [xpList, setXpList] = useState<XP[]>([]);
     // const [catProg, setCatProg] = useState<categories>(props.catProg);
     // const [loadAnimation, setLoadAnimation] = useState(" animatePie2 ")
-    const [loadAnimation, setLoadAnimation] = useState(" animatePie ")
+    const [loadAnimation, setLoadAnimation] = useState(" animatePie ");
+
+
+
+    //TODO Temp write a Get call later to replace
+    let p: Person = {
+        userId: 1,
+        level: 1,
+        name: "Olli"
+    };
+
+
 
 
     useEffect(() => {
+
         getTodayExp()
         getPersonTasks()
         setTimeout(() => {
             setLoadAnimation(" animatePie2 ")
         }, 1300)
         setTimeout(() => {
-            console.log(loadAnimation)
             setLoadAnimation(" transition-all ease-out duration-4000 ")
-            console.log(loadAnimation)
         }, 3600)
 
     }, [])
@@ -80,7 +101,7 @@ function HeroCards(props: any) {
 
     const getTodayExp = async () => {
         const response = await axios.get(
-            `http://localhost:8080/exp/person/1/Today`
+            `http://localhost:8080/exp/person/${person.userId}/Today`
         )
         let todayExp = response.data
         setXpList(todayExp)
@@ -110,8 +131,10 @@ function HeroCards(props: any) {
     }
 
     const getPersonTasks = async () => {
+
+
         const response = await axios.get(
-            `http://localhost:8080/person/1/task_list`,
+            `http://localhost:8080/person/${person.userId}/task_list`,
             {
                 headers: {
                     // Authorization: `Bearer ${accessToken}`,
@@ -120,6 +143,8 @@ function HeroCards(props: any) {
             });
         let taskList: Task[] = response.data;
         setPersonTasks(taskList)
+
+
     }
     //  const handleIncrement = useCallback((id) => {
 
@@ -156,7 +181,7 @@ function HeroCards(props: any) {
     const loadCats = () => {
         return (
             <div className='mt-4 mx-auto flex justify-center  space-x-7 xsm:hidden'>
-               
+
                 <div className={` pie ${loadAnimation}  h-[100px] w-[100px] flex p-6  `}
                     style={{ "--p": pieCounter('mind') }}>
                     <div>

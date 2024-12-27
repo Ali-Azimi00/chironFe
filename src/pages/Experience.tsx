@@ -2,8 +2,8 @@ import React from 'react';
 import '../components/graphStyles.css'
 
 import Heatmap from '../components/Heatmap'
-import RadarChart from '../components/radar';
 import PolarChart from '../components/PolarChart'
+import RadarChart from '../components/Radar';
 
 
 function Experience() {

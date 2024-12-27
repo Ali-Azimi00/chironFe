@@ -96,7 +96,7 @@ function Hero() {
     return (
         <React.Fragment>
 
-            {loadProgBar()}
+                {loadProgBar()}
 
             <div className='mt-0 pb-12'>
 
