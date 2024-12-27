@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './../components/component.css'
 import LandingBanner from '../components/LandingBanner.tsx'
+import LoginModal from '../components/LoginModal.tsx'
+
 
 function Landing() {
-
+    const [openModal, setOpenModal] = useState(false)
 
 
 
@@ -17,8 +19,14 @@ function Landing() {
             xsm:text-9xl 
             welcome 
             '
-                onClick={() => { console.log('hello') }}>
-                <a className='cursor-none m-0' href='/Today'> LVLUP</a>
+                onClick={() => { setOpenModal(true)}}>
+                <a className='cursor-none m-0'
+                // href='/Today'
+                > LVLUP</a>
+            </div>
+
+            <div className={openModal ? "" : "hidden"}>
+                <LoginModal setOpenModal={setOpenModal}></LoginModal>
             </div>
 
             <LandingBanner />
