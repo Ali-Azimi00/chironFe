@@ -1,13 +1,13 @@
 import React from 'react';
-import '../index.css'
 
 
+function RegisterModal(props:any){
 
-function LoginModal(props: any) {
 
-
-    return (
+    return(
         <React.Fragment>
+
+            <div>
             <div id="modalId" tabIndex={1} aria-hidden="true" className={` content-center justify-content-center overflow-y-auto overflow-x-hidden fixed z-50 w-full inset-0 h-[calc(100%-rem)] max-h-full`}
                 style={{ backdropFilter: "blur(5px)" }}
             >
@@ -16,30 +16,30 @@ function LoginModal(props: any) {
                         <div className="flex items-center justify-between p-4 pt-6 pb-0 rounded-t">
 
                             <h3 className="modalText text-2xl font-semibold hover:tracking-wide text-gray-900 dark:text-white">
-                                LogIn
+                                Register
                             </h3>
 
 
                         </div>
-
-
                         <div className="px-4 pt-2 ">
                             <div className="mb-4">
-                                <input className='w-full p-1 pl-2 rounded' placeholder='Name' />
+                                <input className='w-full p-1 pl-2 rounded' placeholder='Email' />
                             </div>
-                            <div className="m-0">
+                            <div className="mb-4">
+                                <input className='w-full p-1 pl-2 rounded' placeholder='UserName' />
+                            </div>
+                            <div className="mb-4">
                                 <input type="password" className='w-full p-1 pl-2 rounded' placeholder='Password' />
                             </div>
-                            <div className='m-1'>
-                                <div className='clickLink hover:cursor-pointer' style={{ fontWeight: "lighter" }}
-                                onClick={()=>{props.setOpenLogin(false);props.setOpenRegister(true)}}
-                                >
-                                    Register Here
-                                </div>
+                            <div className="mb-4">
+                                <input type="password" className='w-full p-1 pl-2 rounded' placeholder='Re-Enter Password' />
                             </div>
+                            {/* <div className='m-1'>
+                                <div className='clickLink hover:cursor-pointer' style={{ fontWeight: "lighter" }}>Register Here</div>
+                            </div> */}
+
+
                         </div>
-
-
                         <div className="flex items-center p-4 md:p-5 border-gray-200 rounded-b dark:border-gray-600 justify-right pt-1">
                             <button onClick={() => { console.log("submit pressed") }}
                                 data-modal-show="modalId"
@@ -48,7 +48,7 @@ function LoginModal(props: any) {
                                 Submit
                             </button>
 
-                            <button onClick={() => { props.setOpenLogin(false) }}
+                            <button onClick={() => { props.setOpenRegister(false) }}
                                 data-modal-hide="modalId"
                                 type="button"
                                 className="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
@@ -59,9 +59,11 @@ function LoginModal(props: any) {
                     </div>
                 </div>
             </div>
+            </div>
 
         </React.Fragment>
     )
 }
 
-export default LoginModal;
+
+export default RegisterModal;
