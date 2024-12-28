@@ -5,7 +5,7 @@ import LoginModal from '../components/LoginModal.tsx'
 
 
 function Landing() {
-    const [openModal, setOpenModal] = useState(false)
+    const [openLogin, setOpenLogin] = useState(false)
 
 
 
@@ -19,14 +19,14 @@ function Landing() {
             xsm:text-9xl 
             welcome 
             '
-                onClick={() => { setOpenModal(true)}}>
+                onClick={() => { setOpenLogin(true)}}>
                 <a className='cursor-none m-0'
                 // href='/Today'
                 > LVLUP</a>
             </div>
 
-            <div className={openModal ? "" : "hidden"}>
-                <LoginModal setOpenModal={setOpenModal}></LoginModal>
+            <div className={openLogin ? "" : "hidden"}>
+                <LoginModal setOpenLogin={setOpenLogin}></LoginModal>
             </div>
 
             <LandingBanner />

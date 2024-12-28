@@ -3,7 +3,7 @@ import '../index.css'
 
 
 
-function LoginModal(props:any) {
+function LoginModal(props: any) {
 
 
     return (
@@ -21,25 +21,29 @@ function LoginModal(props:any) {
 
 
                         </div>
-                        <div className="p-4 pt-2 space-y-4 ">
-                            <div className="">
-                                <input className='w-full p-1 rounded'  placeholder='Name'                               />
+                        <div className="px-4 pt-2 ">
+                            <div className="mb-4">
+                                <input className='w-full p-1 pl-2 rounded' placeholder='Name' />
                             </div>
-                            <div className="">
-                                <input type="password" className='w-full p-1 rounded' placeholder='Password'                               />
+                            <div className="m-0">
+                                <input type="password" className='w-full p-1 pl-2 rounded' placeholder='Password' />
                             </div>
+                            <div className='m-1'>
+                                <div className='clickLink hover:cursor-pointer'>Register Here</div>
+                            </div>
+
 
                         </div>
                         <div className="flex items-center p-4 md:p-5 border-gray-200 rounded-b dark:border-gray-600 justify-right">
                             <button onClick={() => { console.log("submite pressed") }}
-                                data-modal-show="modalId" 
+                                data-modal-show="modalId"
                                 type="submit"
                                 className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-800 dark:hover:bg-purple-700 dark:focus:ring-white-800">
                                 Submit
                             </button>
 
-                            <button onClick={() => { props.setOpenModal(false) }}
-                                data-modal-hide="modalId" 
+                            <button onClick={() => { props.setOpenLogin(false) }}
+                                data-modal-hide="modalId"
                                 type="button"
                                 className="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                                 Close
