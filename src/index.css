@@ -104,7 +104,7 @@ button:focus-visible {
 }
 
 .yCenter{
-  margin: 0;
+  /* margin: 0; */
   position: relative;
   top: 50%;
   -ms-transform: translateY(-50%);

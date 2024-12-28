@@ -19,12 +19,11 @@ function Landing() {
 
             <div className=' absolute'></div>
             <div className=' cursor-none 
-            absolute z-50 inset-0 m-auto max-w-[600px]
-            xsm:text-9xl 
+             z-50 inset-0 m-auto max-w-[600px] 
             welcome 
             '
                 onClick={() => { setOpenLogin(true) }}>
-                <a className='cursor-none m-0'
+                <a className='cursor-none '
                 // href='/Today'
                 > LVLUP</a>
             </div>
